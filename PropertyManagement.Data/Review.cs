@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace PropertyManagement.Data
 {
-    public class Review : ApplicationUser
+    public class Review
     {
         [Key]
         public int ReviewId { get; set; }
