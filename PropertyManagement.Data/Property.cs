@@ -6,6 +6,11 @@ using System.Threading.Tasks;
 
 namespace PropertyManagement.Data
 {
+    public enum PropTy { Single_Family, Multi_Family, Student_Housing, Commercial, Mixed_Use, HOA, Vacation }
+    public enum Utilities { Gas, Eletric, Water, Sewer, Trash, Internet, None }
+    public enum Applicances { Refridgerator, Electric_Stove, Gas_Stove, Microwave, Dishwasher, Dryer, Washer, None }
+    public enum Amenities { Attached_Garage, Detached_Garage, Large_Yard, Private_Yard, Fenced_Yard, /*If Washer/Dryer is not provided*/ Washer_Dryer_Hookup, Deck, Covered_Patio, Uncovered_Patio, Private_Pool, Public_Pool, Basement, Family_Room, Carpet_Bedrooms, Newer_Applicances, Formal_Dining_Room, Master_Bedroom, Fireplace, WalkIn_Closet, Double_Vanity, Soaking_Tub, Skylights, Ceiling_Fans, AC_Unit, Electric_Heating, Gas_Heating, Programmable_Thermostat, ADA_Ramps }
+
     public class Property
     {
         public int PropertyId { get; set; }

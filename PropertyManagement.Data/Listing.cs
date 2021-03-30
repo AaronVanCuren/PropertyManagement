@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 namespace PropertyManagement.Data
 {
     // Inheriting from ApplicationUser so we can use Id and RoleId
-    public class Listing : ApplicationUser
+    public class Listing
     {
         [Key]
         public int ListingId { get; set; }

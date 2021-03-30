@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace PropertyManagement.Data
 {
     // Inheriting from ApplicationUser to bring in Id & UserName
-    public class Comment : ApplicationUser
+    public class Comment
     {
         [Key]
         public int CommentId { get; set; }
