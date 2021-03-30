@@ -41,8 +41,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="ApplicationUserService.cs" />
+    <Compile Include="CommentService.cs" />
+    <Compile Include="ListingService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PropertyService.cs" />
+    <Compile Include="ReplyService.cs" />
+    <Compile Include="ReviewService.cs" />
+    <Compile Include="VendorService.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\PropertyManagement.Data\PropertyManagement.Data.csproj">

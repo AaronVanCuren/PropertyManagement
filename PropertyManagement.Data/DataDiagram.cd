@@ -3,7 +3,7 @@
   <Class Name="PropertyManagement.Data.Comment">
     <Position X="3.75" Y="4.75" Width="1.75" />
     <TypeIdentifier>
-      <HashCode>AAAIAAAAAgAABAAAgAAAAAAAAAAAEAAgAAAAAQAIAAA=</HashCode>
+      <HashCode>AAAIAAAAAgAABAAAAAAAAAAAAAAAAAAgAAAAAAAIAAA=</HashCode>
       <FileName>Comment.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -22,7 +22,7 @@
     </ShowAsAssociation>
   </Class>
   <Class Name="PropertyManagement.Data.Reply">
-    <Position X="9.75" Y="5.25" Width="1.5" />
+    <Position X="10" Y="6" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAEAgAAAAAAgAAAABAAAAAAAAAgEACAAAAAAAA=</HashCode>
       <FileName>Reply.cs</FileName>

@@ -8,16 +8,19 @@ using System.Threading.Tasks;
 
 namespace PropertyManagement.Data
 {
-    public class Comment
+    // Inheriting from ApplicationUser to bring in Id & UserName
+    public class Comment : ApplicationUser
     {
         [Key]
         public int CommentId { get; set; }
 
         [Required]
-        public string Author { get; set; }
-        
-        [Required]
         public string Content { get; set; }
+
+        [Required]
+        public DateTimeOffset CommentCreated { get; set; }
+
+        public DateTimeOffset? CommentEdited { get; set; }
 
         public virtual List<Reply> Replies { get; set; }
 
@@ -28,12 +31,5 @@ namespace PropertyManagement.Data
 
         [ForeignKey(nameof(ListingId))]
         public virtual Listing Listing { get; set; }
-
-        // Notes are posted to a property for property management company viewing
-        [Required]
-        public int PropertyId { get; set; }
-
-        [ForeignKey(nameof(PropertyId))]
-        public virtual Property Property { get; set; }
     }
 }
