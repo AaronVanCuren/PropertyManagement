@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PropertyManagement.Services
 {
-    public class Class1
+    class ReviewService
     {
     }
 }

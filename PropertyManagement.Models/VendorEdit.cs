@@ -1,18 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PropertyManagement.Data
+namespace PropertyManagement.Models
 {
-    public class Vendor
+    public class VendorEdit
     {
-        [Key]
-        public int VendorId { get; set; }
-
         public string VendorName { get; set; }
 
         public string Description { get; set; }
@@ -20,7 +15,5 @@ namespace PropertyManagement.Data
         public string Email { get; set; }
 
         public string PhoneNumber { get; set; }
-
-        public virtual List<Review> Reviews { get; set; }
     }
 }

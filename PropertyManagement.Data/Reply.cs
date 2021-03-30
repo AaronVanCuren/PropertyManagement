@@ -8,17 +8,18 @@ using System.Threading.Tasks;
 
 namespace PropertyManagement.Data
 {
-    public class Reply
+    public class Reply : ApplicationUser
     {
         [Key]
         public int ReplyId { get; set; }
 
         [Required]
-        public string Author { get; set; }
-
-        [Required]
         public string Content { get; set; }
 
+        [Required]
+        public DateTimeOffset ReplyCreated { get; set; }
+
+        public DateTimeOffset? ReplyEdited { get; set; }
 
         // Replies applicable only to comments
         // Can be created by anyone

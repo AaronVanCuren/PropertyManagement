@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace PropertyManagement.Models
 {
-    public class Class1
+    public class ListingList
     {
+        public int PropertyId { get; set; }
     }
 }

@@ -1,21 +1,16 @@
-﻿using System;
+﻿using PropertyManagement.Data;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PropertyManagement.Data
+namespace PropertyManagement.Models
 {
-    public class Property
+    public class PropertyList
     {
         public int PropertyId { get; set; }
 
-        // Research how to implement
-        // public object Pictures { get; set; }
-        // public object Videos {get; set; }
-        // https://www.c-sharpcorner.com/UploadFile/abhikumarvatsa/working-with-azure-blob-storage-in-mvc/
-
-        // Implement google/apple maps
         public string Address { get; set; }
 
         // Property Type
@@ -59,12 +54,6 @@ namespace PropertyManagement.Data
 
         public Amenities Amenities { get; set; }
 
-        // Notes made by property management company about property
-        // Not visable to other users
         public virtual List<Comment> Comments { get; set; }
-
-        // Implement Audit Log to keep track of who makes changes and what changes were made
-
-        // Implement attachment uploads (pdfs, word docs, excel sheets...etc)
     }
 }

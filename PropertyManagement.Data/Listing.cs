@@ -9,16 +9,11 @@ using System.Threading.Tasks;
 
 namespace PropertyManagement.Data
 {
-    public class Listing
+    // Inheriting from ApplicationUser so we can use Id and RoleId
+    public class Listing : ApplicationUser
     {
         [Key]
         public int ListingId { get; set; }
-
-        [Required]
-        public int UserId { get; set; }
-
-        [ForeignKey(nameof(UserId))]
-        public virtual ApplicationUser ApplicationUser { get; set; }
 
         [Required]
         public int PropertyId { get; set; }

@@ -64,12 +64,6 @@
     <Compile Include="Vendor.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\PropertyManagement.Models\PropertyManagement.Models.csproj">
-      <Project>{38dff3d4-6fc0-40c1-af50-dacb26744515}</Project>
-      <Name>PropertyManagement.Models</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="App.config" />
     <None Include="DataDiagram.cd" />
     <None Include="packages.config" />
