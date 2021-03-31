@@ -11,7 +11,7 @@ namespace PropertyManagement.Models
     public class ReviewCreate
     {
         [Required]
-        public string UserName { get; set; }
+        public string FirstName { get; set; }
 
         [Required]
         public string Title { get; set; }

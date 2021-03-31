@@ -12,7 +12,5 @@ namespace PropertyManagement.Models
         public string VendorName { get; set; }
 
         public string Description { get; set; }
-
-        public virtual List<Review> Reviews { get; set; }
     }
 }

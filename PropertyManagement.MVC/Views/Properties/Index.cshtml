@@ -1,0 +1,142 @@
+﻿@model IEnumerable<PropertyManagement.Models.PropertyList>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+
+@if (TempData.ContainsKey("SaveResult"))
+{
+    <div class="alert alert-success fade in" role="alert">
+
+        <button type="button" class="close" data-dismiss="alert">
+            <span>&times;</span>
+        </button>
+        @TempData["SaveResult"]
+    </div>
+}
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Address)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PropTy)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IsAHP)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Status)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Bedroom)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Bathroom)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SqFt)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Rent)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AppFee)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SD)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NSFee)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Utilities)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Appliances)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Cat)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Dog)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Amenities)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Address)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PropTy)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IsAHP)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Status)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Bedroom)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Bathroom)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SqFt)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Rent)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AppFee)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SD)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NSFee)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Utilities)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Appliances)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cat)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Dog)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Amenities)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.PropertyId }) |
+                @Html.ActionLink("Details", "Details", new { id = item.PropertyId }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.PropertyId })
+            </td>
+        </tr>
+    }
+
+</table>
