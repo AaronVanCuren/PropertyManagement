@@ -14,20 +14,20 @@
         <p>
             Check out all of our listings.
         </p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
+        <p>@Html.ActionLink(HttpUtility.HtmlDecode("Show Listings &raquo;"), "Index", "Listings", null, new { @class = "btn btn-primary btn-large" })</p>
     </div>
     <div class="col-md-4">
         <h2>Reviews</h2>
         <p>
             Give us a review or check out reviews by others.
         </p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
+        <p>@Html.ActionLink(HttpUtility.HtmlDecode("Show Reviews &raquo;"), "Index", "Reviews", null, new { @class = "btn btn-primary btn-large" })</p>
     </div>
     <div class="col-md-4">
         <h2>Vendors</h2>
         <p>
             Check out our approved vendors.
         </p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
+        <p>@Html.ActionLink(HttpUtility.HtmlDecode("Show Vendors &raquo;"), "Index", "Vendors", null, new { @class = "btn btn-primary btn-large" })</p>
     </div>
 </div>
