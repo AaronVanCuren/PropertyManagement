@@ -2,9 +2,6 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace PropertyManagement.Data
 {
@@ -12,6 +9,9 @@ namespace PropertyManagement.Data
     {
         [Key]
         public int ReviewId { get; set; }
+
+        [Required]
+        public string FirstName { get; set; }
 
         [Required]
         public string Title { get; set; }

@@ -1,9 +1,5 @@
 ﻿using PropertyManagement.Data;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace PropertyManagement.Models
 {
@@ -44,7 +40,7 @@ namespace PropertyManagement.Models
 
         public Utilities Utilities { get; set; }
 
-        public Applicances Applicances { get; set; }
+        public Applicances Appliances { get; set; }
 
         // Are cats allowed at this property
         public bool Cat { get; set; }

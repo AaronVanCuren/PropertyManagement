@@ -8,6 +8,8 @@ namespace PropertyManagement.Models
 {
     public class VendorEdit
     {
+        public int VendorId { get; set; }
+
         public string VendorName { get; set; }
 
         public string Description { get; set; }

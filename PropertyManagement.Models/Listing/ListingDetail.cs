@@ -8,6 +8,6 @@ namespace PropertyManagement.Models
 {
     public class ListingDetail
     {
-        public int PropertyId { get; set; }
+        public IQueryable PropertyId { get; set; }
     }
 }

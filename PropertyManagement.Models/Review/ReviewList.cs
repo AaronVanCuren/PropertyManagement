@@ -9,7 +9,7 @@ namespace PropertyManagement.Models
 {
     public class ReviewList
     {
-        public int ReviewId { get; set; }
+        public string FirstName { get; set; }
 
         public string Title { get; set; }
 

@@ -1,0 +1,154 @@
+﻿@model PropertyManagement.Data.Property
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Property</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Address)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Address)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PropTy)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PropTy)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IsAHP)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IsAHP)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Status)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Status)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Bedroom)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Bedroom)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Bathroom)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Bathroom)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SqFt)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SqFt)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Rent)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Rent)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AppFee)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AppFee)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SD)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SD)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NSFee)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NSFee)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Utilities)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Utilities)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Appliances)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Appliances)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Cat)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cat)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Dog)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Dog)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Amenities)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Amenities)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.PropertyId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
