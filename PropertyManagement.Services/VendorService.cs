@@ -12,11 +12,11 @@ namespace PropertyManagement.Services
     {
         private readonly ApplicationDbContext db = new ApplicationDbContext();
 
-        private readonly string id;
+        private readonly string _id;
 
         public VendorService(string userId)
         {
-            id = userId;
+            _id = userId;
         }
 
         // CREATE
@@ -55,7 +55,7 @@ namespace PropertyManagement.Services
             {
                 VendorName = v.VendorName,
                 Description = v.Description,
-                Reviews = db.Reviews.Where(r => r.VendorId == v.VendorId)
+                Reviews = db.VendorReviews.Where(r => r.VendorId == v.VendorId)
                     .Select(r => new ReviewList
                     {
                         FirstName = r.FirstName,

@@ -10,6 +10,8 @@ namespace PropertyManagement.Models
 {
     public class ReviewCreate
     {
+        public int VendorId { get; set; }
+
         [Required]
         public string FirstName { get; set; }
 

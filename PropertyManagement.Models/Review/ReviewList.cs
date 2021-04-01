@@ -9,9 +9,13 @@ namespace PropertyManagement.Models
 {
     public class ReviewList
     {
+        public IQueryable VendorName { get; set; }
+
         public string FirstName { get; set; }
 
         public string Title { get; set; }
+
+        public string Content { get; set; }
 
         [Display(Name = "Created")]
         public DateTimeOffset ReviewCreated { get; set; }

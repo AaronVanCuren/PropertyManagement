@@ -172,10 +172,12 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\CompanyReviewsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ListingsController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\PropertiesController.cs" />
+    <Compile Include="Controllers\VendorReviewsController.cs" />
     <Compile Include="Controllers\VendorsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -361,6 +363,16 @@
     <Content Include="Views\Vendors\Details.cshtml" />
     <Content Include="Views\Vendors\Edit.cshtml" />
     <Content Include="Views\Vendors\Index.cshtml" />
+    <Content Include="Views\VendorReviews\Index.cshtml" />
+    <Content Include="Views\VendorReviews\Create.cshtml" />
+    <Content Include="Views\VendorReviews\Details.cshtml" />
+    <Content Include="Views\VendorReviews\Edit.cshtml" />
+    <Content Include="Views\VendorReviews\Delete.cshtml" />
+    <Content Include="Views\CompanyReviews\Index.cshtml" />
+    <Content Include="Views\CompanyReviews\Create.cshtml" />
+    <Content Include="Views\CompanyReviews\Details.cshtml" />
+    <Content Include="Views\CompanyReviews\Edit.cshtml" />
+    <Content Include="Views\CompanyReviews\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
