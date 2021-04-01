@@ -12,11 +12,11 @@ namespace PropertyManagement.Services
     {
         private readonly ApplicationDbContext db = new ApplicationDbContext();
 
-        private readonly string id;
+        private readonly string _id;
 
         public ListingService(string userId)
         {
-            id = userId;
+            _id = userId;
         }
 
         //CREATE

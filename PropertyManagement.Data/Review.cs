@@ -26,10 +26,14 @@ namespace PropertyManagement.Data
 
         public virtual List<Reply> Replies { get; set; }
 
-        [Required]
         public int VendorId { get; set; }
 
         [ForeignKey(nameof(VendorId))]
         public virtual Vendor Vendor { get; set; }
+
+        public string UserId { get; set; }
+
+        [ForeignKey(nameof(UserId))]
+        public virtual ApplicationUser ApplicationUser { get; set; }
     }
 }
