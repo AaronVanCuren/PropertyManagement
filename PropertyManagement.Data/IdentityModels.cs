@@ -44,8 +44,7 @@ namespace PropertyManagement.Data
         public DbSet<Vendor> Vendors { get; set; }
         public DbSet<Comment> Comments { get; set; }
         public DbSet<Reply> Replies { get; set; }
-        public DbSet<Review> CompanyReviews { get; set; }
-        public DbSet<Review> VendorReviews { get; set; }
+        public DbSet<Review> Reviews { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

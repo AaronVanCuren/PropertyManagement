@@ -172,11 +172,14 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\CommentRepliesController.cs" />
+    <Compile Include="Controllers\CommentsController.cs" />
     <Compile Include="Controllers\CompanyReviewsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ListingsController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\PropertiesController.cs" />
+    <Compile Include="Controllers\ReviewRepliesController.cs" />
     <Compile Include="Controllers\VendorReviewsController.cs" />
     <Compile Include="Controllers\VendorsController.cs" />
     <Compile Include="Global.asax.cs">
@@ -373,6 +376,21 @@
     <Content Include="Views\CompanyReviews\Details.cshtml" />
     <Content Include="Views\CompanyReviews\Edit.cshtml" />
     <Content Include="Views\CompanyReviews\Delete.cshtml" />
+    <Content Include="Views\Comments\Create.cshtml" />
+    <Content Include="Views\Comments\Delete.cshtml" />
+    <Content Include="Views\Comments\Details.cshtml" />
+    <Content Include="Views\Comments\Edit.cshtml" />
+    <Content Include="Views\Comments\Index.cshtml" />
+    <Content Include="Views\CommentReplies\Index.cshtml" />
+    <Content Include="Views\CommentReplies\Create.cshtml" />
+    <Content Include="Views\CommentReplies\Details.cshtml" />
+    <Content Include="Views\CommentReplies\Edit.cshtml" />
+    <Content Include="Views\CommentReplies\Delete.cshtml" />
+    <Content Include="Views\ReviewReplies\Index.cshtml" />
+    <Content Include="Views\ReviewReplies\Create.cshtml" />
+    <Content Include="Views\ReviewReplies\Details.cshtml" />
+    <Content Include="Views\ReviewReplies\Edit.cshtml" />
+    <Content Include="Views\ReviewReplies\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -1,0 +1,52 @@
+﻿@model PropertyManagement.Data.Reply
+
+<div>
+    <h4>Reply</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Comment.UserName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Comment.UserName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Review.FirstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Review.FirstName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Content)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Content)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ReplyCreated)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ReplyCreated)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ReplyEdited)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ReplyEdited)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ReplyId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -29,7 +29,7 @@ namespace PropertyManagement.Services
                 Content = model.Content,
             };
 
-            db.CompanyReviews.Add(review);
+            db.Reviews.Add(review);
             return db.SaveChanges() == 1;
         }
 
@@ -44,14 +44,14 @@ namespace PropertyManagement.Services
                 Content = model.Content,
             };
 
-            db.VendorReviews.Add(review);
+            db.Reviews.Add(review);
             return db.SaveChanges() == 1;
         }
 
         // READ
         public IEnumerable<ReviewList> GetCompanyReviews()
         {
-            var search = db.CompanyReviews
+            var search = db.Reviews.Where(r => r.VendorId == null)
                 .Select(r => new ReviewList
                 {
                     FirstName = r.FirstName,
@@ -67,12 +67,12 @@ namespace PropertyManagement.Services
         // READ
         public IEnumerable<ReviewList> GetVendorReviews()
         {
-            var search = db.VendorReviews
+            var search = db.Reviews.Where(r => r.VendorId != null)
                 .Select(r => new ReviewList
                 {
                     VendorName = db.Vendors
-                    .Select(v => new VendorList
-                    {VendorName = v.VendorName}),
+                        .Select(v => new VendorList
+                        { VendorName = v.VendorName }),
                     FirstName = r.FirstName,
                     Title = r.Title,
                     Content = r.Content,
@@ -86,7 +86,7 @@ namespace PropertyManagement.Services
         // READ BY ID
         public ReviewDetail GetCompanyReviewsById(int id)
         {
-            var r = db.CompanyReviews.Single(review => review.ReviewId == id);
+            var r = db.Reviews.Single(review => review.ReviewId == id);
             return new ReviewDetail
             {
                 ReviewId = r.ReviewId,
@@ -100,10 +100,13 @@ namespace PropertyManagement.Services
         // READ BY ID
         public ReviewDetail GetVendorReviewsById(int id)
         {
-            var r = db.VendorReviews.Single(review => review.ReviewId == id);
+            var r = db.Reviews.Single(review => review.ReviewId == id);
             return new ReviewDetail
             {
                 ReviewId = r.ReviewId,
+                VendorName = db.Vendors
+                    .Select(v => new VendorList
+                    { VendorName = v.VendorName }),
                 Title = r.Title,
                 Content = r.Content,
                 ReviewCreated = r.ReviewCreated,
@@ -112,21 +115,9 @@ namespace PropertyManagement.Services
         }
 
         // UPDATE
-        public bool UpdateCompanyReview(ReviewEdit model)
+        public bool UpdateReview(ReviewEdit model)
         {
-            var r = db.CompanyReviews.Single(review => review.ReviewId == model.ReviewId && review.UserId == _id);
-            {
-                r.Title = model.Title;
-                r.Content = model.Content;
-            }
-
-            return db.SaveChanges() == 1;
-        }
-
-        // UPDATE
-        public bool UpdateVendorReview(ReviewEdit model)
-        {
-            var r = db.VendorReviews.Single(review => review.ReviewId == model.ReviewId && review.UserId == _id);
+            var r = db.Reviews.Single(review => review.ReviewId == model.ReviewId && review.UserId == _id);
             {
                 r.Title = model.Title;
                 r.Content = model.Content;
@@ -136,18 +127,10 @@ namespace PropertyManagement.Services
         }
 
         // DELETE
-        public bool DeleteCompanyReview(int id)
+        public bool DeleteReview(int id)
         {
-            var review = db.CompanyReviews.Single(r => r.ReviewId == id && r.UserId == _id);
-            db.CompanyReviews.Remove(review);
-            return db.SaveChanges() == 1;
-        }
-
-        // DELETE
-        public bool DeleteVendorReview(int id)
-        {
-            var review = db.VendorReviews.Single(r => r.ReviewId == id && r.UserId == _id);
-            db.VendorReviews.Remove(review);
+            var review = db.Reviews.Single(r => r.ReviewId == id && r.UserId == _id);
+            db.Reviews.Remove(review);
             return db.SaveChanges() == 1;
         }
     }

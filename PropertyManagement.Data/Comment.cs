@@ -5,11 +5,12 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace PropertyManagement.Data
 {
-    // Inheriting from ApplicationUser to bring in Id & UserName
     public class Comment
     {
         [Key]
         public int CommentId { get; set; }
+
+        public string UserName { get; set; }
 
         [Required]
         public string Content { get; set; }
@@ -20,7 +21,6 @@ namespace PropertyManagement.Data
         public DateTimeOffset? CommentEdited { get; set; }
 
         public virtual List<Reply> Replies { get; set; }
-
 
         // Comments are posted to property listing that are for sale or for rent
         [Required]

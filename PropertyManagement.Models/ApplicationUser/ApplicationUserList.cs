@@ -8,7 +8,7 @@ namespace PropertyManagement.Models
 {
     public class ApplicationUserList
     {
-        public string Id { get; set; }
+        public int Id { get; set; }
 
         public string FirstName { get; set; }
 

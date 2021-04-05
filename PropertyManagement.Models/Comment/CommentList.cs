@@ -9,8 +9,6 @@ namespace PropertyManagement.Models
 {
     public class CommentList
     {
-        public int ListingId { get; set; }
-
         public string Content { get; set; }
 
         [Display(Name = "Created")]

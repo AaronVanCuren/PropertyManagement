@@ -55,7 +55,7 @@ namespace PropertyManagement.Services
             {
                 VendorName = v.VendorName,
                 Description = v.Description,
-                Reviews = db.VendorReviews.Where(r => r.VendorId == v.VendorId)
+                Reviews = db.Reviews.Where(r => r.VendorId == v.VendorId)
                     .Select(r => new ReviewList
                     {
                         FirstName = r.FirstName,

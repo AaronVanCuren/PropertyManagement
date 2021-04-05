@@ -9,6 +9,8 @@ namespace PropertyManagement.Data
         [Key]
         public int ReplyId { get; set; }
 
+        public string UserName { get; set; }
+
         [Required]
         public string Content { get; set; }
 
@@ -32,5 +34,11 @@ namespace PropertyManagement.Data
 
         [ForeignKey(nameof(ReviewId))]
         public virtual Review Review { get; set; }
+
+        /*[Required]
+        public int UserId { get; set; }
+
+        [ForeignKey(nameof(UserId))]
+        public virtual ApplicationUser ApplicationUser { get; set; }*/
     }
 }
