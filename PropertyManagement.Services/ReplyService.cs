@@ -78,7 +78,7 @@ namespace PropertyManagement.Services
         }
 
         // READ BY ID
-        public ReplyDetail GetCommentRepliesById(int id)
+        public ReplyDetail GetCommentRepliesById(int? id)
         {
             var r = db.Replies.Single(review => review.ReplyId == id);
             return new ReplyDetail
