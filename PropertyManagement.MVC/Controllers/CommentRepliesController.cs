@@ -52,7 +52,7 @@ namespace PropertyManagement.Controllers
         }
 
         // GET: CommentReplies/Details/{id}
-        public ActionResult Details(int id)
+        public ActionResult Details(int? id)
         {
             var svc = CommentRepliesCreateService();
             var reply = svc.GetCommentRepliesById(id);
