@@ -13,118 +13,114 @@ using PropertyManagement.Services;
 
 namespace PropertyManagement.Controllers
 {
-    public class VendorsController : Controller
+    public class CommentsController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
-        // GET: Vendors
+        // GET: Comments
         public ActionResult Index()
         {
-            var svc = VendorCreateService();
-            var vendors = svc.GetVendors();
-            return View(vendors);
+            var svc = CommentCreateService();
+            var comments = svc.GetComments();
+            return View(comments);
         }
 
-
-        // GET: Vendors/Create
+        // GET: Comments/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Vendors/Create
+        // POST: Comments/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(VendorCreate vendor)
+        public ActionResult Create(CommentCreate comment)
         {
             if (!ModelState.IsValid)
-                return View(vendor);
+                return View(comment);
 
-            var svc = VendorCreateService();
+            var svc = CommentCreateService();
 
-            if (svc.VendorCreate(vendor))
+            if (svc.CommentCreate(comment))
             {
-                TempData["SaveResult"] = "Vendor was created.";
+                TempData["SaveResult"] = "Comment was created.";
                 return RedirectToAction("Index");
             };
 
-            ModelState.AddModelError("", "Vendor could not be created.");
+            ModelState.AddModelError("", "Comment could not be created.");
 
-            return View(vendor);
+            return View(comment);
         }
 
-        // GET: Vendors/Details/{id}
+        // GET: Comments/Details/{id}
         public ActionResult Details(int id)
         {
-            var svc = VendorCreateService();
-            var vendor = svc.GetVendorById(id);
-            return View(vendor);
+            var svc = CommentCreateService();
+            var comment = svc.GetCommentById(id);
+            return View(comment);
         }
 
-        // GET: Vendors/Edit/{id}
+        // GET: Comments/Edit/{id}
         public ActionResult Edit(int id)
         {
-            var svc = VendorCreateService();
-            var model = svc.GetVendorById(id);
-            var vendor = new VendorEdit
+            var svc = CommentCreateService();
+            var model = svc.GetCommentById(id);
+            var comment = new CommentEdit
             {
-                VendorName = model.VendorName,
-                Description = model.Description,
-                Email = model.Email,
-                PhoneNumber = model.PhoneNumber
+                Content = model.Content
             };
 
-            return View(vendor);
+            return View(comment);
         }
 
-        // POST: Vendors/Edit/{id}
+        // POST: Comments/Edit/{id}
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, VendorEdit vendor)
+        public ActionResult Edit(int id, CommentEdit comment)
         {
             if (!ModelState.IsValid)
             {
-                return View(vendor);
+                return View(comment);
             }
 
-            if (vendor.VendorId != id)
+            if (comment.CommentId != id)
             {
                 ModelState.AddModelError("", "Id Mismatch");
-                return View(vendor);
+                return View(comment);
             }
 
-            var svc = VendorCreateService();
+            var svc = CommentCreateService();
 
-            if (svc.UpdateVendor(vendor))
+            if (svc.UpdateComment(comment))
             {
-                TempData["SaveResult"] = "Vendor was updated.";
+                TempData["SaveResult"] = "Comment was updated.";
                 return RedirectToAction("Index");
             }
 
-            ModelState.AddModelError("", "Vendor could not be updated.");
-            return View(vendor);
+            ModelState.AddModelError("", "Comment could not be updated.");
+            return View(comment);
         }
 
-        // GET: Vendors/Delete/{id}
+        // GET: Comments/Delete/{id}
         public ActionResult Delete(int id)
         {
-            var svc = VendorCreateService();
-            var vendor = svc.GetVendorById(id);
-            return View(vendor);
+            var svc = CommentCreateService();
+            var comment = svc.GetCommentById(id);
+            return View(comment);
         }
 
-        // POST: Vendors/Delete/{id}
+        // POST: Comments/Delete/{id}
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            var svc = VendorCreateService();
-            svc.DeleteVendor(id);
-            TempData["SaveResult"] = "Vendor was deleted.";
+            var svc = CommentCreateService();
+            svc.DeleteComment(id);
+            TempData["SaveResult"] = "Comment was deleted.";
             return RedirectToAction("Index");
         }
 
@@ -137,10 +133,10 @@ namespace PropertyManagement.Controllers
             base.Dispose(disposing);
         }
 
-        private VendorService VendorCreateService()
+        private CommentService CommentCreateService()
         {
             var userId = User.Identity.GetUserId();
-            var svc = new VendorService(userId);
+            var svc = new CommentService(userId);
             return svc;
         }
     }

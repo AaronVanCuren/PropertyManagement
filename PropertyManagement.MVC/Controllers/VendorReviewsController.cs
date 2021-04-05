@@ -93,7 +93,7 @@ namespace PropertyManagement.Controllers
 
             var svc = VendorReviewCreateService();
 
-            if (svc.UpdateVendorReview(review))
+            if (svc.UpdateReview(review))
             {
                 TempData["SaveResult"] = "Vendor review was updated.";
                 return RedirectToAction("Index");
@@ -117,7 +117,7 @@ namespace PropertyManagement.Controllers
         public ActionResult DeleteConfirmed(int id)
         {
             var svc = VendorReviewCreateService();
-            svc.DeleteVendorReview(id);
+            svc.DeleteReview(id);
             TempData["SaveResult"] = "Vendor review was deleted.";
             return RedirectToAction("Index");
         }

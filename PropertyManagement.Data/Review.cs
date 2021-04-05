@@ -26,7 +26,7 @@ namespace PropertyManagement.Data
 
         public virtual List<Reply> Replies { get; set; }
 
-        public int VendorId { get; set; }
+        public int? VendorId { get; set; }
 
         [ForeignKey(nameof(VendorId))]
         public virtual Vendor Vendor { get; set; }

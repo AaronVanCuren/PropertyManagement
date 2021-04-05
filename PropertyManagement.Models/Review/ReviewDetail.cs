@@ -11,6 +11,8 @@ namespace PropertyManagement.Models
     {
         public int ReviewId { get; set; }
 
+        public IQueryable VendorName { get; set; }
+
         public string Title { get; set; }
 
         public string Content { get; set; }

@@ -15,6 +15,8 @@ namespace PropertyManagement.Models
 
         public string Content { get; set; }
 
+        public virtual IQueryable Replies { get; set; }
+
         [Display(Name = "Created")]
         public DateTimeOffset CommentCreated { get; set; }
 

@@ -1,0 +1,51 @@
+﻿@model IEnumerable<PropertyManagement.Data.Reply>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Comment.UserName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Review.FirstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Content)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ReplyCreated)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ReplyEdited)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Comment.UserName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Review.FirstName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Content)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ReplyCreated)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ReplyEdited)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ReplyId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ReplyId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ReplyId })
+        </td>
+    </tr>
+}
+
+</table>

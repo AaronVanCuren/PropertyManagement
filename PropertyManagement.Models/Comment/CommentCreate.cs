@@ -11,9 +11,6 @@ namespace PropertyManagement.Models
     public class CommentCreate
     {
         [Required]
-        public string UserName { get; set; }
-
-        [Required]
         public int ListingId { get; set; }
 
         [Required]
