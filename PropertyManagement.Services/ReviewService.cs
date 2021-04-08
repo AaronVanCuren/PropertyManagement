@@ -1,5 +1,6 @@
 ﻿using PropertyManagement.Data;
-using PropertyManagement.Models;
+using PropertyManagement.Models.Reviews;
+using PropertyManagement.Models.Vendors;
 using System;
 using System.Collections.Generic;
 using System.Linq;

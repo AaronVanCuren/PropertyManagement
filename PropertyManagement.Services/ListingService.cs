@@ -1,5 +1,6 @@
 ﻿using PropertyManagement.Data;
-using PropertyManagement.Models;
+using PropertyManagement.Models.Listings;
+using PropertyManagement.Models.Properties;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -41,6 +42,7 @@ namespace PropertyManagement.Services
                     PropertyId = db.Properties.Where(p => p.PropertyId == li.PropertyId)
                     .Select(p => new PropertyList
                     {
+                        PropertyId = p.PropertyId,
                         Address = p.Address,
                         PropTy = p.PropTy,
                         IsAHP = p.IsAHP,

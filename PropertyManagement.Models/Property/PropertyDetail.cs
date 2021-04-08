@@ -1,7 +1,7 @@
 ﻿using PropertyManagement.Data;
 using System.Collections.Generic;
 
-namespace PropertyManagement.Models
+namespace PropertyManagement.Models.Properties
 {
     public class PropertyDetail
     {

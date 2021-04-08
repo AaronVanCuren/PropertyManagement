@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PropertyManagement.Models
+namespace PropertyManagement.Models.Reviews
 {
     public class ReviewList
     {

@@ -8,7 +8,7 @@ using System.Web;
 using System.Web.Mvc;
 using Microsoft.AspNet.Identity;
 using PropertyManagement.Data;
-using PropertyManagement.Models;
+using PropertyManagement.Models.Comments;
 using PropertyManagement.Services;
 
 namespace PropertyManagement.Controllers

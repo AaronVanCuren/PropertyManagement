@@ -1,4 +1,4 @@
-﻿@model IEnumerable<PropertyManagement.Data.Listing>
+﻿@model IEnumerable<PropertyManagement.Models.ListingList>
 
 @{
     ViewBag.Title = "Index";
@@ -12,7 +12,7 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Property.Address)
+            @Html.DisplayNameFor(model => model.PropertyId)
         </th>
         <th></th>
     </tr>
@@ -20,12 +20,11 @@
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.Property.Address)
+            @Html.DisplayFor(modelItem => item.PropertyId)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.ListingId }) |
-            @Html.ActionLink("Details", "Details", new { id=item.ListingId }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.ListingId })
+            @Html.ActionLink("Details", "Details", new { id=item.PropertyId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.PropertyId })
         </td>
     </tr>
 }

@@ -1,6 +1,6 @@
 ﻿using PropertyManagement.Data;
 
-namespace PropertyManagement.Models
+namespace PropertyManagement.Models.Properties
 {
     public class PropertyList
     {
