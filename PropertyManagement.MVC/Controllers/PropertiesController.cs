@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 using System.Net;
 using System.Web.Mvc;
 using PropertyManagement.Data;
-using PropertyManagement.Models;
+using PropertyManagement.Models.Properties;
 using PropertyManagement.Services;
 using Microsoft.AspNet.Identity;
 using System.Linq;

@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNet.Identity;
 using PropertyManagement.Data;
-using PropertyManagement.Models;
+using PropertyManagement.Models.Reviews;
 using PropertyManagement.Services;
 using System;
 using System.Collections.Generic;

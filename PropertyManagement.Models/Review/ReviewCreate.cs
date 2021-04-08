@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Web.Mvc;
 
-namespace PropertyManagement.Models
+namespace PropertyManagement.Models.Reviews
 {
     public class ReviewCreate
     {

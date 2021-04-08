@@ -7,10 +7,10 @@
 <h2>Create</h2>
 
 
-@using (Html.BeginForm()) 
+@using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
+
     <div class="form-horizontal">
         <h4>Listing</h4>
         <hr />
@@ -18,7 +18,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.PropertyId, "PropertyId", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.DropDownList("PropertyId", null, htmlAttributes: new { @class = "form-control" })
+                @Html.DropDownList("PropertyId", new SelectList(ViewBag.Properties, "PropertyId", "Address"), new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.PropertyId, "", new { @class = "text-danger" })
             </div>
         </div>

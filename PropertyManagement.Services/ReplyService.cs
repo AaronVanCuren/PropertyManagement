@@ -1,5 +1,5 @@
 ﻿using PropertyManagement.Data;
-using PropertyManagement.Models;
+using PropertyManagement.Models.Replies;
 using System;
 using System.Collections.Generic;
 using System.Linq;

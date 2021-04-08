@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Web.Mvc;
 
-namespace PropertyManagement.Models
+namespace PropertyManagement.Models.Replies
 {
     // Might have to add some sort of validation to ensure a user does not need to enter both a comment
     public class ReplyCreate

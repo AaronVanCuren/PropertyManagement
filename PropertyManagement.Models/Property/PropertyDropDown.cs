@@ -4,10 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PropertyManagement.Models.Listings
+namespace PropertyManagement.Models.Properties
 {
-    public class ListingEdit
+    public class PropertyDropDown
     {
         public int PropertyId { get; set; }
+
+        public string Address { get; set; }
     }
 }

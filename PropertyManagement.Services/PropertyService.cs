@@ -1,5 +1,5 @@
 ﻿using PropertyManagement.Data;
-using PropertyManagement.Models;
+using PropertyManagement.Models.Properties;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -70,6 +70,19 @@ namespace PropertyManagement.Services
                     Cat = p.Cat,
                     Dog = p.Dog,
                     Amenities = p.Amenities
+                });
+
+            return search.ToArray();
+        }
+
+        public IEnumerable<PropertyDropDown> GetPropertiesDropDown()
+        {
+            var search = db.Properties
+                .Select(
+                p => new PropertyDropDown
+                {
+                    PropertyId = p.PropertyId,
+                    Address = p.Address,
                 });
 
             return search.ToArray();
