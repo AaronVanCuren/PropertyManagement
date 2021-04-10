@@ -111,11 +111,11 @@
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Utilities)
+            @Html.DisplayFor(model => model.Utilities.ToList())
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Appliances)
+            @Html.DisplayNameFor(model => model.Appliances.ToList())
         </dt>
 
         <dd>
@@ -139,7 +139,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Amenities)
+            @Html.DisplayNameFor(model => model.Amenities.ToList())
         </dt>
 
         <dd>

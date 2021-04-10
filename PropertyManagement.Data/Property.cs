@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace PropertyManagement.Data
@@ -66,121 +67,126 @@ namespace PropertyManagement.Data
     public enum PropTy
     {
         [Display(Name = "Single Family")]
-        Single_Family,
+        Single_Family = 1 << 0,
 
         [Display(Name = "Multi-Family")]
-        Multi_Family,
+        Multi_Family = 1 << 1,
 
         [Display(Name = "Student Housing")]
-        Student_Housing,
+        Student_Housing = 1 << 2,
 
         [Display(Name = "Commercial")]
-        Commercial,
+        Commercial = 1 << 3,
 
         [Display(Name = "Mixed-Use")]
-        Mixed_Use,
+        Mixed_Use = 1 << 4,
 
         [Display(Name = "Home Owners Association")]
-        HOA,
+        HOA = 1 << 5,
 
         [Display(Name = "Vacation/Airbnb")]
-        Vacation
+        Vacation = 1 << 6
     }
 
-    public enum Utilities { Gas, Eletric, Water, Sewer, Trash, Internet, None }
+    [Flags]
+    public enum Utilities { Gas = 1 << 0, Eletric = 1 << 1, Water = 1 << 2, Sewer = 1 << 3, Trash = 1 << 4, Internet = 1 << 5, None = 0 }
 
+    [Flags]
     public enum Applicances
     {
         [Display(Name = "Electric Stove")]
-        Electric_Stove,
+        Electric_Stove = 1 << 0,
 
         [Display(Name = "Gas Stove")]
-        Gas_Stove,
+        Gas_Stove = 1 << 1,
 
-        Refridgerator, Microwave, Dishwasher, Dryer, Washer, None
+        Refridgerator = 1 << 2, Microwave = 1 << 3, Dishwasher = 1 << 4, Dryer = 1 << 5, Washer = 1 << 6, None = 0
     }
 
+    [Flags]
     public enum Amenities
     {
+        None = 0,
+
         [Display(Name = "Attached Garage")]
-        Attached_Garage,
+        Attached_Garage = 1 << 0,
 
         [Display(Name = "Detached Garage")]
-        Detached_Garage,
+        Detached_Garage = 1 << 1,
 
         [Display(Name = "Large Yard")]
-        Large_Yard,
+        Large_Yard = 1 << 2,
 
         [Display(Name = "Private Yard")]
-        Private_Yard,
+        Private_Yard = 1 << 3,
 
         [Display(Name = "Fenced Yard")]
-        Fenced_Yard,
+        Fenced_Yard = 1 << 4,
 
-        Deck,
+        Deck = 1 << 5,
 
         [Display(Name = "Covered Patio")]
-        Covered_Patio,
+        Covered_Patio = 1 << 6,
 
         [Display(Name = "Uncovered Patio")]
-        Uncovered_Patio,
+        Uncovered_Patio = 1 << 7,
 
         [Display(Name = "Private Pool")]
-        Private_Pool,
+        Private_Pool = 1 << 8,
 
         [Display(Name = "Public Pool Access")]
-        Public_Pool,
+        Public_Pool = 1 << 9,
 
-        Basement,
+        Basement = 1 << 10,
 
         [Display(Name = "Family Room")]
-        Family_Room,
+        Family_Room = 1 << 11,
 
         [Display(Name = "Formal Dining Room")]
-        Formal_Dining_Room,
+        Formal_Dining_Room = 1 << 12,
 
         [Display(Name = "Master Bedroom")]
-        Master_Bedroom,
+        Master_Bedroom = 1 << 13,
 
         [Display(Name = "Carpeted Bedrooms")]
-        Carpet_Bedrooms,
+        Carpet_Bedrooms = 1 << 14,
 
         [Display(Name = "Walk-In Closet(s)")]
-        WalkIn_Closet,
+        WalkIn_Closet = 1 << 15,
 
         [Display(Name = "Double Vanity")]
-        Double_Vanity,
+        Double_Vanity = 1 << 16,
 
         [Display(Name = "Updated Appliances")]
-        Newer_Applicances,
+        Newer_Applicances = 1 << 17,
 
         /*If Washer/Dryer is not provided*/
         [Display(Name = "Washer & Dryer Hookups")]
-        Washer_Dryer_Hookup,
+        Washer_Dryer_Hookup = 1 << 18,
 
-        Fireplace,
+        Fireplace = 1 << 19,
 
         [Display(Name = "Soaking Tub")]
-        Soaking_Tub,
+        Soaking_Tub = 1 << 20,
 
-        Skylights,
+        Skylights = 1 << 21,
 
         [Display(Name = "Ceiling Fans")]
-        Ceiling_Fans,
+        Ceiling_Fans = 1 << 22,
 
         [Display(Name = "Central AC")]
-        AC_Unit,
+        AC_Unit = 1 << 23,
 
         [Display(Name = "Electric Heating")]
-        Electric_Heating,
+        Electric_Heating = 1 << 24,
 
         [Display(Name = "Gas Heating")]
-        Gas_Heating,
+        Gas_Heating = 1 << 25,
 
         [Display(Name = "Programmable Thermostat")]
-        Programmable_Thermostat,
+        Programmable_Thermostat = 1 << 26,
 
         [Display(Name = "Installed ADA Ramps")]
-        ADA_Ramps
+        ADA_Ramps = 1 << 27
     }
 }
