@@ -76,6 +76,10 @@
     <Compile Include="Migrations\202104051435187_BasicMVP.designer.cs">
       <DependentUpon>202104051435187_BasicMVP.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202104091612586_Property Enum List.cs" />
+    <Compile Include="Migrations\202104091612586_Property Enum List.designer.cs">
+      <DependentUpon>202104091612586_Property Enum List.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Property.cs" />
@@ -100,6 +104,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202104051435187_BasicMVP.resx">
       <DependentUpon>202104051435187_BasicMVP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202104091612586_Property Enum List.resx">
+      <DependentUpon>202104091612586_Property Enum List.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

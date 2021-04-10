@@ -44,22 +44,6 @@ namespace PropertyManagement.Services
                     {
                         PropertyId = p.PropertyId,
                         Address = p.Address,
-                        PropTy = p.PropTy,
-                        IsAHP = p.IsAHP,
-                        Status = p.Status,
-                        Description = p.Description,
-                        Bedroom = p.Bedroom,
-                        Bathroom = p.Bathroom,
-                        SqFt = p.SqFt,
-                        Rent = p.Rent,
-                        AppFee = p.AppFee,
-                        SD = p.SD,
-                        NSFee = p.NSFee,
-                        Utilities = p.Utilities,
-                        Appliances = p.Appliances,
-                        Cat = p.Cat,
-                        Dog = p.Dog,
-                        Amenities = p.Amenities
                     })
                 });
 
@@ -73,7 +57,7 @@ namespace PropertyManagement.Services
             return new ListingDetail
             {
                 PropertyId = db.Properties.Where(p => p.PropertyId == li.PropertyId)
-                .Select(p => new PropertyList
+                .Select(p => new PropertyDetail
                 {
                     Address = p.Address,
                     PropTy = p.PropTy,

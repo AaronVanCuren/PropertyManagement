@@ -1,10 +1,10 @@
-﻿@model IEnumerable<PropertyManagement.Models.PropertyList>
+﻿@model IEnumerable<PropertyManagement.Models.Properties.PropertyList>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Properties";
 }
 
-<h2>Index</h2>
+<h2>Properties</h2>
 
 <p>
     @Html.ActionLink("Create New", "Create")
@@ -24,55 +24,10 @@
 <table class="table">
     <tr>
         <th>
+            @Html.DisplayNameFor(model => model.PropertyId)
+        </th>
+        <th>
             @Html.DisplayNameFor(model => model.Address)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.PropTy)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.IsAHP)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Status)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Description)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Bedroom)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Bathroom)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.SqFt)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Rent)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.AppFee)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.SD)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.NSFee)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Utilities)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Appliances)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Cat)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Dog)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Amenities)
         </th>
         <th></th>
     </tr>
@@ -81,62 +36,24 @@
     {
         <tr>
             <td>
+                @Html.DisplayFor(modelItem => item.PropertyId)
+            </td>
+            <td>
                 @Html.DisplayFor(modelItem => item.Address)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.PropTy)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.IsAHP)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Status)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Description)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Bedroom)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Bathroom)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.SqFt)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Rent)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.AppFee)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.SD)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.NSFee)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Utilities)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Appliances)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Cat)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Dog)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Amenities)
             </td>
             <td>
                 @Html.ActionLink("Edit", "Edit", new { id = item.PropertyId }) |
                 @Html.ActionLink("Details", "Details", new { id = item.PropertyId }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.PropertyId })
+
+                <div id="showmodal" class="modal fade" tabindex="-1" role="dialog">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            @{Html.RenderPartial("Delete", item);}
+                        </div><!-- /.modal-content -->
+                    </div><!-- /.modal-dialog -->
+                </div><!-- /.modal -->
+                <button id='open' data-toggle="modal" data-target="#showmodal">Delete</button>
             </td>
         </tr>
     }
-
 </table>

@@ -1,4 +1,5 @@
 ﻿using PropertyManagement.Data;
+using System.Collections.Generic;
 
 namespace PropertyManagement.Models.Properties
 {
@@ -37,9 +38,9 @@ namespace PropertyManagement.Models.Properties
         // Non-Sufficient Funds Fee
         public int NSFee { get; set; }
 
-        public Utilities Utilities { get; set; }
+        public List<Utilities> Utilities { get; set; }
 
-        public Applicances Appliances { get; set; }
+        public List<Applicances> Appliances { get; set; }
 
         // Are cats allowed at this property
         public bool Cat { get; set; }
@@ -47,6 +48,6 @@ namespace PropertyManagement.Models.Properties
         // Are dogs allowed at this property
         public bool Dog { get; set; }
 
-        public Amenities Amenities { get; set; }
+        public List<Amenities> Amenities { get; set; }
     }
 }

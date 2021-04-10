@@ -1,22 +1,20 @@
 ﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace PropertyManagement.Data
 {
-    public enum PropTy { Single_Family, Multi_Family, Student_Housing, Commercial, Mixed_Use, HOA, Vacation }
-    public enum Utilities { Gas, Eletric, Water, Sewer, Trash, Internet, None }
-    public enum Applicances { Refridgerator, Electric_Stove, Gas_Stove, Microwave, Dishwasher, Dryer, Washer, None }
-    public enum Amenities { Attached_Garage, Detached_Garage, Large_Yard, Private_Yard, Fenced_Yard, /*If Washer/Dryer is not provided*/ Washer_Dryer_Hookup, Deck, Covered_Patio, Uncovered_Patio, Private_Pool, Public_Pool, Basement, Family_Room, Carpet_Bedrooms, Newer_Applicances, Formal_Dining_Room, Master_Bedroom, Fireplace, WalkIn_Closet, Double_Vanity, Soaking_Tub, Skylights, Ceiling_Fans, AC_Unit, Electric_Heating, Gas_Heating, Programmable_Thermostat, ADA_Ramps }
+    /*Research how to implement the following...
+    public object Pictures { get; set; }
+    public object Videos {get; set; }
+    https://www.c-sharpcorner.com/UploadFile/abhikumarvatsa/working-with-azure-blob-storage-in-mvc/
+    Implement google/apple maps
+    Implement Audit Log to keep track of who makes changes and what changes were made
+    Implement attachment uploads (pdfs, word docs, excel sheets...etc)*/
 
     public class Property
     {
         public int PropertyId { get; set; }
 
-        // Research how to implement
-        // public object Pictures { get; set; }
-        // public object Videos {get; set; }
-        // https://www.c-sharpcorner.com/UploadFile/abhikumarvatsa/working-with-azure-blob-storage-in-mvc/
-
-        // Implement google/apple maps
         public string Address { get; set; }
 
         // Property Type
@@ -48,9 +46,9 @@ namespace PropertyManagement.Data
         // Non-Sufficient Funds Fee
         public int NSFee { get; set; }
 
-        public Utilities Utilities { get; set; }
+        public List<Utilities> Utilities { get; set; }
 
-        public Applicances Appliances { get; set; }
+        public List<Applicances> Appliances { get; set; }
 
         // Are cats allowed at this property
         public bool Cat { get; set; }
@@ -58,14 +56,131 @@ namespace PropertyManagement.Data
         // Are dogs allowed at this property
         public bool Dog { get; set; }
 
-        public Amenities Amenities { get; set; }
+        public List<Amenities> Amenities { get; set; }
 
         // Notes made by property management company about property
         // Not visable to other users
         public virtual List<Comment> Comments { get; set; }
+    }
 
-        // Implement Audit Log to keep track of who makes changes and what changes were made
+    public enum PropTy
+    {
+        [Display(Name = "Single Family")]
+        Single_Family,
 
-        // Implement attachment uploads (pdfs, word docs, excel sheets...etc)
+        [Display(Name = "Multi-Family")]
+        Multi_Family,
+
+        [Display(Name = "Student Housing")]
+        Student_Housing,
+
+        [Display(Name = "Commercial")]
+        Commercial,
+
+        [Display(Name = "Mixed-Use")]
+        Mixed_Use,
+
+        [Display(Name = "Home Owners Association")]
+        HOA,
+
+        [Display(Name = "Vacation/Airbnb")]
+        Vacation
+    }
+
+    public enum Utilities { Gas, Eletric, Water, Sewer, Trash, Internet, None }
+
+    public enum Applicances
+    {
+        [Display(Name = "Electric Stove")]
+        Electric_Stove,
+
+        [Display(Name = "Gas Stove")]
+        Gas_Stove,
+
+        Refridgerator, Microwave, Dishwasher, Dryer, Washer, None
+    }
+
+    public enum Amenities
+    {
+        [Display(Name = "Attached Garage")]
+        Attached_Garage,
+
+        [Display(Name = "Detached Garage")]
+        Detached_Garage,
+
+        [Display(Name = "Large Yard")]
+        Large_Yard,
+
+        [Display(Name = "Private Yard")]
+        Private_Yard,
+
+        [Display(Name = "Fenced Yard")]
+        Fenced_Yard,
+
+        Deck,
+
+        [Display(Name = "Covered Patio")]
+        Covered_Patio,
+
+        [Display(Name = "Uncovered Patio")]
+        Uncovered_Patio,
+
+        [Display(Name = "Private Pool")]
+        Private_Pool,
+
+        [Display(Name = "Public Pool Access")]
+        Public_Pool,
+
+        Basement,
+
+        [Display(Name = "Family Room")]
+        Family_Room,
+
+        [Display(Name = "Formal Dining Room")]
+        Formal_Dining_Room,
+
+        [Display(Name = "Master Bedroom")]
+        Master_Bedroom,
+
+        [Display(Name = "Carpeted Bedrooms")]
+        Carpet_Bedrooms,
+
+        [Display(Name = "Walk-In Closet(s)")]
+        WalkIn_Closet,
+
+        [Display(Name = "Double Vanity")]
+        Double_Vanity,
+
+        [Display(Name = "Updated Appliances")]
+        Newer_Applicances,
+
+        /*If Washer/Dryer is not provided*/
+        [Display(Name = "Washer & Dryer Hookups")]
+        Washer_Dryer_Hookup,
+
+        Fireplace,
+
+        [Display(Name = "Soaking Tub")]
+        Soaking_Tub,
+
+        Skylights,
+
+        [Display(Name = "Ceiling Fans")]
+        Ceiling_Fans,
+
+        [Display(Name = "Central AC")]
+        AC_Unit,
+
+        [Display(Name = "Electric Heating")]
+        Electric_Heating,
+
+        [Display(Name = "Gas Heating")]
+        Gas_Heating,
+
+        [Display(Name = "Programmable Thermostat")]
+        Programmable_Thermostat,
+
+        [Display(Name = "Installed ADA Ramps")]
+        ADA_Ramps
     }
 }

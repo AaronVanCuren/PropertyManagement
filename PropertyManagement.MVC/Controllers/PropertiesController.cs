@@ -7,6 +7,7 @@ using PropertyManagement.Models.Properties;
 using PropertyManagement.Services;
 using Microsoft.AspNet.Identity;
 using System.Linq;
+using System;
 
 namespace PropertyManagement.Controllers
 {
@@ -25,6 +26,10 @@ namespace PropertyManagement.Controllers
         // GET: Properties/Create
         public ActionResult Create()
         {
+            ViewBag.Utilities = Enum.GetValues(typeof(Utilities)).Cast<Utilities>().ToList();
+            ViewBag.Appliances = Enum.GetValues(typeof(Applicances)).Cast<Applicances>().ToList();
+            ViewBag.Amenities = Enum.GetValues(typeof(Amenities)).Cast<Amenities>().ToList();
+
             return View();
         }
 
@@ -65,6 +70,10 @@ namespace PropertyManagement.Controllers
         [ActionName("Edit")]
         public ActionResult Edit(int id)
         {
+            ViewBag.Utilities = Enum.GetValues(typeof(Utilities)).Cast<Utilities>().ToList();
+            ViewBag.Appliances = Enum.GetValues(typeof(Applicances)).Cast<Applicances>().ToList();
+            ViewBag.Amenities = Enum.GetValues(typeof(Amenities)).Cast<Amenities>().ToList();
+
             var svc = PropertyCreateService();
             var model = svc.GetPropertyById(id);
             var property = new PropertyEdit
@@ -120,17 +129,6 @@ namespace PropertyManagement.Controllers
             return View(property);
         }
 
-        // GET: Properties/Delete/{id}
-        [ActionName("Delete")]
-        public ActionResult Delete(int id)
-        {
-            var svc = PropertyCreateService();
-            var property = svc.GetPropertyById(id);
-
-            return View(property);
-        }
-
-        // POST: Properties/Delete/{id}
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteProperty(int id)
