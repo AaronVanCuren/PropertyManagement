@@ -16,7 +16,6 @@ namespace PropertyManagement.Services
             _id = userId;
         }
 
-
         //CREATE
         public bool PropertyCreate (PropertyCreate model)
         {
@@ -53,36 +52,7 @@ namespace PropertyManagement.Services
                 p => new PropertyList
                 {
                     PropertyId = p.PropertyId,
-                    Address = p.Address,
-                    PropTy = p.PropTy,
-                    IsAHP = p.IsAHP,
-                    Status = p.Status,
-                    Description = p.Description,
-                    Bedroom = p.Bedroom,
-                    Bathroom = p.Bathroom,
-                    SqFt = p.SqFt,
-                    Rent = p.Rent,
-                    AppFee = p.AppFee,
-                    SD = p.SD,
-                    NSFee = p.NSFee,
-                    Utilities = p.Utilities,
-                    Appliances = p.Appliances,
-                    Cat = p.Cat,
-                    Dog = p.Dog,
-                    Amenities = p.Amenities
-                });
-
-            return search.ToArray();
-        }
-
-        public IEnumerable<PropertyDropDown> GetPropertiesDropDown()
-        {
-            var search = db.Properties
-                .Select(
-                p => new PropertyDropDown
-                {
-                    PropertyId = p.PropertyId,
-                    Address = p.Address,
+                    Address = p.Address
                 });
 
             return search.ToArray();

@@ -1,4 +1,5 @@
 ﻿using PropertyManagement.Data;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace PropertyManagement.Models.Properties
@@ -56,10 +57,10 @@ namespace PropertyManagement.Models.Properties
         public int NSFee { get; set; }
 
         [Required]
-        public Utilities Utilities { get; set; }
+        public List<Utilities> Utilities { get; set; }
 
         [Required]
-        public Applicances Appliances { get; set; }
+        public List<Applicances> Appliances { get; set; }
 
         // Are cats allowed at this property
         [Required]
@@ -70,6 +71,6 @@ namespace PropertyManagement.Models.Properties
         public bool Dog { get; set; }
 
         [Required]
-        public Amenities Amenities { get; set; }
+        public List<Amenities> Amenities { get; set; }
     }
 }

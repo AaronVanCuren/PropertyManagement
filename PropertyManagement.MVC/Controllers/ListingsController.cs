@@ -15,7 +15,7 @@ namespace PropertyManagement.Controllers
 {
     public class ListingsController : Controller
     {
-        private ApplicationDbContext db = new ApplicationDbContext();
+        private readonly ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: Listings
         public ActionResult Index()
@@ -29,7 +29,7 @@ namespace PropertyManagement.Controllers
         public ActionResult Create()
         {
             var svcP = PropertyCreateService();
-            ViewBag.Properties = svcP.GetPropertiesDropDown();
+            ViewBag.Properties = svcP.GetProperties();
             return View();
         }
 

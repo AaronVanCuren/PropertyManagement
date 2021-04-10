@@ -86,7 +86,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Property\PropertyCreate.cs" />
     <Compile Include="Property\PropertyDetail.cs" />
-    <Compile Include="Property\PropertyDropDown.cs" />
     <Compile Include="Property\PropertyEdit.cs" />
     <Compile Include="Property\PropertyList.cs" />
     <Compile Include="Reply\ReplyCreate.cs" />
