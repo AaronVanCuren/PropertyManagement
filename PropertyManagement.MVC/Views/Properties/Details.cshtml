@@ -4,151 +4,53 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Details</h2>
-
-<div>
-    <h4>Property</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Address)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Address)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.PropTy)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.PropTy)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.IsAHP)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.IsAHP)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Status)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Status)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Description)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Description)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Bedroom)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Bedroom)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Bathroom)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Bathroom)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.SqFt)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.SqFt)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Rent)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Rent)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.AppFee)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.AppFee)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.SD)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.SD)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.NSFee)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.NSFee)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Utilities)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Utilities.ToList())
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Appliances.ToList())
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Appliances)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Cat)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Cat)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Dog)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Dog)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Amenities.ToList())
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Amenities)
-        </dd>
-
-    </dl>
+<div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    <h4 class="modal-title">Property Details</h4>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.PropertyId }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+
+<div class="modal-body">
+    <p><span class="ui-icon ui-icon-alert" style="float:left; margin:12px 12px 20px 0;"></span>Would you like to edit this property?</p>
+    <div class="form-horizontal">
+        <p>Propety Id: @Model.PropertyId</p>
+        <p>Address: @Model.Address</p>
+
+        <p>Property Type: @Model.PropTy</p>
+        <p>Affordable Housing: @Model.IsAHP</p>
+        <p>Occupied: @Model.Status</p>
+        <p>Description @Model.Description</p>
+        <p># of Bedrooms: @Model.Bedroom</p>
+        <p># of Bathrooms @Model.Bathroom</p>
+        <p>Total Square Feet: @Model.SqFt</p>
+        <p>Rent: @Model.Rent</p>
+        <p>Application Fee: @Model.AppFee</p>
+        <p>Security Deposit: @Model.SD</p>
+        <p>Non-Sufficient Fee: @Model.NSFee</p>
+        @*<p>Utilites: @Model.Utilities</p>
+        <p>Appliances: @Model.Appliances</p>*@
+        <p>Cat: @Model.Cat</p>
+        <p>Dog: @Model.Dog</p>
+        @*<p>Amenities: @Model.Amenities</p>*@
+    </div>
+</div>
+
+<div class="modal-footer">
+    @*<button type="button" class="btn btn-primary">Confirm Delete</button>*@
+
+    @using (Html.BeginRouteForm("Default", new
+    {
+        controller = "Properties",
+        action = "Edit",
+        id = Model.PropertyId
+    }, FormMethod.Get))
+
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Edit" class="btn btn-default" /> |
+        </div>
+    }
+
+    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+</div>

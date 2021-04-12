@@ -56,11 +56,11 @@ namespace PropertyManagement.Models.Properties
         [Display(Name = "Non-Sufficient Funds Fee")]
         public int NSFee { get; set; }
 
-        [Required]
+/*        [Required]
         public List<Utilities> Utilities { get; set; }
 
         [Required]
-        public List<Applicances> Appliances { get; set; }
+        public List<Applicances> Appliances { get; set; }*/
 
         // Are cats allowed at this property
         [Required]
@@ -70,7 +70,7 @@ namespace PropertyManagement.Models.Properties
         [Required]
         public bool Dog { get; set; }
 
-        [Required]
-        public List<Amenities> Amenities { get; set; }
+/*        [Required]
+        public List<Amenities> Amenities { get; set; }*/
     }
 }

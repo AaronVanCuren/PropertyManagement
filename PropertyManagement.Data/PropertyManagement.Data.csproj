@@ -60,25 +60,9 @@
     <Compile Include="Comment.cs" />
     <Compile Include="Listing.cs" />
     <Compile Include="IdentityModels.cs" />
-    <Compile Include="Migrations\202103301629370_InitialCreate.cs" />
-    <Compile Include="Migrations\202103301629370_InitialCreate.designer.cs">
-      <DependentUpon>202103301629370_InitialCreate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202103301649485_Initial.cs" />
-    <Compile Include="Migrations\202103301649485_Initial.designer.cs">
-      <DependentUpon>202103301649485_Initial.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202103310236419_Property.cs" />
-    <Compile Include="Migrations\202103310236419_Property.designer.cs">
-      <DependentUpon>202103310236419_Property.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202104051435187_BasicMVP.cs" />
-    <Compile Include="Migrations\202104051435187_BasicMVP.designer.cs">
-      <DependentUpon>202104051435187_BasicMVP.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202104091612586_Property Enum List.cs" />
-    <Compile Include="Migrations\202104091612586_Property Enum List.designer.cs">
-      <DependentUpon>202104091612586_Property Enum List.cs</DependentUpon>
+    <Compile Include="Migrations\202104121516250_Initial.cs" />
+    <Compile Include="Migrations\202104121516250_Initial.designer.cs">
+      <DependentUpon>202104121516250_Initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -93,20 +77,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202103301629370_InitialCreate.resx">
-      <DependentUpon>202103301629370_InitialCreate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202103301649485_Initial.resx">
-      <DependentUpon>202103301649485_Initial.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202103310236419_Property.resx">
-      <DependentUpon>202103310236419_Property.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202104051435187_BasicMVP.resx">
-      <DependentUpon>202104051435187_BasicMVP.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202104091612586_Property Enum List.resx">
-      <DependentUpon>202104091612586_Property Enum List.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202104121516250_Initial.resx">
+      <DependentUpon>202104121516250_Initial.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

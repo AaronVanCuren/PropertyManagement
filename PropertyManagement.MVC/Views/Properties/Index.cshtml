@@ -1,4 +1,4 @@
-﻿@model IEnumerable<PropertyManagement.Models.Properties.PropertyList>
+﻿@model IEnumerable<PropertyManagement.Models.Properties.PropertyDetail>
 
 @{
     ViewBag.Title = "Properties";
@@ -43,7 +43,16 @@
             </td>
             <td>
                 @Html.ActionLink("Edit", "Edit", new { id = item.PropertyId }) |
-                @Html.ActionLink("Details", "Details", new { id = item.PropertyId }) |
+                @*@Html.ActionLink("Details", "Details", new { id = item.PropertyId })*@
+
+                <div id="showmodal" class="modal fade" tabindex="-1" role="dialog">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            @{Html.RenderPartial("Details", item);}
+                        </div><!-- /.modal-content -->
+                    </div><!-- /.modal-dialog -->
+                </div><!-- /.modal -->
+                <button id='open' data-toggle="modal" data-target="#showmodal">Details</button>|
 
                 <div id="showmodal" class="modal fade" tabindex="-1" role="dialog">
                     <div class="modal-dialog" role="document">
