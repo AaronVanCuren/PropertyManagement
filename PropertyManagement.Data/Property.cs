@@ -47,9 +47,9 @@ namespace PropertyManagement.Data
         // Non-Sufficient Funds Fee
         public int NSFee { get; set; }
 
-        public List<Utilities> Utilities { get; set; }
+/*        public List<Utilities> Utilities { get; set; }
 
-        public List<Applicances> Appliances { get; set; }
+        public List<Applicances> Appliances { get; set; }*/
 
         // Are cats allowed at this property
         public bool Cat { get; set; }
@@ -57,7 +57,7 @@ namespace PropertyManagement.Data
         // Are dogs allowed at this property
         public bool Dog { get; set; }
 
-        public List<Amenities> Amenities { get; set; }
+/*        public List<Amenities> Amenities { get; set; }*/
 
         // Notes made by property management company about property
         // Not visable to other users
@@ -88,7 +88,7 @@ namespace PropertyManagement.Data
         Vacation = 1 << 6
     }
 
-    [Flags]
+/*    [Flags]
     public enum Utilities { Gas = 1 << 0, Eletric = 1 << 1, Water = 1 << 2, Sewer = 1 << 3, Trash = 1 << 4, Internet = 1 << 5, None = 0 }
 
     [Flags]
@@ -160,7 +160,7 @@ namespace PropertyManagement.Data
         [Display(Name = "Updated Appliances")]
         Newer_Applicances = 1 << 17,
 
-        /*If Washer/Dryer is not provided*/
+        *//*If Washer/Dryer is not provided*//*
         [Display(Name = "Washer & Dryer Hookups")]
         Washer_Dryer_Hookup = 1 << 18,
 
@@ -188,5 +188,5 @@ namespace PropertyManagement.Data
 
         [Display(Name = "Installed ADA Ramps")]
         ADA_Ramps = 1 << 27
-    }
+    }*/
 }

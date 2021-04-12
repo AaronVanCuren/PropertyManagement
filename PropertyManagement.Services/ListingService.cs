@@ -71,11 +71,11 @@ namespace PropertyManagement.Services
                     AppFee = p.AppFee,
                     SD = p.SD,
                     NSFee = p.NSFee,
-                    Utilities = p.Utilities,
-                    Appliances = p.Appliances,
+                    /*Utilities = p.Utilities,
+                    Appliances = p.Appliances,*/
                     Cat = p.Cat,
                     Dog = p.Dog,
-                    Amenities = p.Amenities
+                    /*Amenities = p.Amenities*/
                 })
             };
         }

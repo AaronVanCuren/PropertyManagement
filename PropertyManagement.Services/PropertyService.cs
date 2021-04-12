@@ -33,11 +33,11 @@ namespace PropertyManagement.Services
                 AppFee = model.AppFee,
                 SD = model.SD,
                 NSFee = model.NSFee,
-                Utilities = model.Utilities,
-                Appliances = model.Appliances,
+                /*Utilities = model.Utilities,
+                Appliances = model.Appliances,*/
                 Cat = model.Cat,
                 Dog = model.Dog,
-                Amenities = model.Amenities
+                /*Amenities = model.Amenities*/
             };
 
             db.Properties.Add(property);
@@ -45,11 +45,11 @@ namespace PropertyManagement.Services
         }
 
         // READ
-        public IEnumerable<PropertyList> GetProperties()
+        public IEnumerable<PropertyDetail> GetProperties()
         {
             var search = db.Properties
                 .Select(
-                p => new PropertyList
+                p => new PropertyDetail
                 {
                     PropertyId = p.PropertyId,
                     Address = p.Address
@@ -77,11 +77,11 @@ namespace PropertyManagement.Services
                     AppFee = p.AppFee,
                     SD = p.SD,
                     NSFee = p.NSFee,
-                    Utilities = p.Utilities,
-                    Appliances = p.Appliances,
+                    /*Utilities = p.Utilities,
+                    Appliances = p.Appliances,*/
                     Cat = p.Cat,
                     Dog = p.Dog,
-                    Amenities = p.Amenities
+                    /*Amenities = p.Amenities*/
                 };
         }
 
@@ -102,11 +102,11 @@ namespace PropertyManagement.Services
             p.AppFee = model.AppFee;
             p.SD = model.SD;
             p.NSFee = model.NSFee;
-            p.Utilities = model.Utilities;
-            p.Appliances = model.Appliances;
+            /*p.Utilities = model.Utilities;
+            p.Appliances = model.Appliances;*/
             p.Cat = model.Cat;
             p.Dog = model.Dog;
-            p.Amenities = model.Amenities;
+            /*p.Amenities = model.Amenities;*/
 
             return db.SaveChanges() == 1;
         }

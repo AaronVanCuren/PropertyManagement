@@ -26,9 +26,9 @@ namespace PropertyManagement.Controllers
         // GET: Properties/Create
         public ActionResult Create()
         {
-            ViewBag.Utilities = Enum.GetValues(typeof(Utilities)).Cast<Utilities>().ToList();
+            /*ViewBag.Utilities = Enum.GetValues(typeof(Utilities)).Cast<Utilities>().ToList();
             ViewBag.Appliances = Enum.GetValues(typeof(Applicances)).Cast<Applicances>().ToList();
-            ViewBag.Amenities = Enum.GetValues(typeof(Amenities)).Cast<Amenities>().ToList();
+            ViewBag.Amenities = Enum.GetValues(typeof(Amenities)).Cast<Amenities>().ToList();*/
 
             return View();
         }
@@ -70,9 +70,9 @@ namespace PropertyManagement.Controllers
         [ActionName("Edit")]
         public ActionResult Edit(int id)
         {
-            ViewBag.Utilities = Enum.GetValues(typeof(Utilities)).Cast<Utilities>().ToList();
+            /*ViewBag.Utilities = Enum.GetValues(typeof(Utilities)).Cast<Utilities>().ToList();
             ViewBag.Appliances = Enum.GetValues(typeof(Applicances)).Cast<Applicances>().ToList();
-            ViewBag.Amenities = Enum.GetValues(typeof(Amenities)).Cast<Amenities>().ToList();
+            ViewBag.Amenities = Enum.GetValues(typeof(Amenities)).Cast<Amenities>().ToList();*/
 
             var svc = PropertyCreateService();
             var model = svc.GetPropertyById(id);
@@ -90,11 +90,11 @@ namespace PropertyManagement.Controllers
                 AppFee = model.AppFee,
                 SD = model.SD,
                 NSFee = model.NSFee,
-                Utilities = model.Utilities,
-                Appliances = model.Appliances,
+                /*Utilities = model.Utilities,
+                Appliances = model.Appliances,*/
                 Cat = model.Cat,
                 Dog = model.Dog,
-                Amenities = model.Amenities
+                /*Amenities = model.Amenities*/
             };
             return View(property);
         }
