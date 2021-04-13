@@ -81,13 +81,10 @@
     <Compile Include="Comment\CommentList.cs" />
     <Compile Include="Listing\ListingCreate.cs" />
     <Compile Include="Listing\ListingDetail.cs" />
-    <Compile Include="Listing\ListingEdit.cs" />
-    <Compile Include="Listing\ListingList.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Property\PropertyCreate.cs" />
     <Compile Include="Property\PropertyDetail.cs" />
     <Compile Include="Property\PropertyEdit.cs" />
-    <Compile Include="Property\PropertyList.cs" />
     <Compile Include="Reply\ReplyCreate.cs" />
     <Compile Include="Reply\ReplyDetail.cs" />
     <Compile Include="Reply\ReplyEdit.cs" />

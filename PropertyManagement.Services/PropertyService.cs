@@ -86,7 +86,7 @@ namespace PropertyManagement.Services
         }
 
         // UPDATE
-        public bool UpdateProperty(PropertyEdit model)
+        public bool UpdateProperty(PropertyDetail model)
         {
             var p = db.Properties.Single(property => property.PropertyId == model.PropertyId);
 

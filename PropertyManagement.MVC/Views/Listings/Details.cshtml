@@ -1,4 +1,4 @@
-﻿@model PropertyManagement.Models.Properties.PropertyDetail
+﻿@model PropertyManagement.Models.Listings.ListingDetail
 
 @{
     ViewBag.Title = "Property Details";
@@ -13,23 +13,6 @@
     <p><span class="ui-icon ui-icon-alert" style="float:left; margin:12px 12px 20px 0;"></span>Would you like to edit this property?</p>
     <div class="form-horizontal">
         <p>Propety Id: @Model.PropertyId</p>
-        <p>Address: @Model.Address</p>
-        <p>Property Type: @Model.PropTy</p>
-        <p>Affordable Housing: @Model.IsAHP</p>
-        <p>Occupied: @Model.Status</p>
-        <p>Description @Model.Description</p>
-        <p># of Bedrooms: @Model.Bedroom</p>
-        <p># of Bathrooms @Model.Bathroom</p>
-        <p>Total Square Feet: @Model.SqFt</p>
-        <p>Rent: @Model.Rent</p>
-        <p>Application Fee: @Model.AppFee</p>
-        <p>Security Deposit: @Model.SD</p>
-        <p>Non-Sufficient Fee: @Model.NSFee</p>
-        @*<p>Utilites: @Model.Utilities</p>
-        <p>Appliances: @Model.Appliances</p>*@
-        <p>Cat: @Model.Cat</p>
-        <p>Dog: @Model.Dog</p>
-        @*<p>Amenities: @Model.Amenities</p>*@
     </div>
 </div>
 

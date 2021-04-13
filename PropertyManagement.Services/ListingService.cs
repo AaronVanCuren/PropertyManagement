@@ -33,14 +33,14 @@ namespace PropertyManagement.Services
         }
 
         // READ
-        public IEnumerable<ListingList> GetListings()
+        public IEnumerable<ListingDetail> GetListings()
         {
-            var search = db.Listings
-                .Select(
-                li => new ListingList
+            var search = db.Listings.Select(
+                li => new ListingDetail
                 {
+                    ListingId = li.ListingId,
                     PropertyId = db.Properties.Where(p => p.PropertyId == li.PropertyId)
-                    .Select(p => new PropertyList
+                    .Select(p => new PropertyDetail
                     {
                         PropertyId = p.PropertyId,
                         Address = p.Address,
@@ -53,9 +53,10 @@ namespace PropertyManagement.Services
         // READ BY ID
         public ListingDetail GetListingById(int id)
         {
-            var li = db.Listings.Single(listing => listing.PropertyId == id);
+            var li = db.Listings.Single(listing => listing.ListingId == id);
             return new ListingDetail
             {
+                ListingId = li.ListingId,
                 PropertyId = db.Properties.Where(p => p.PropertyId == li.PropertyId)
                 .Select(p => new PropertyDetail
                 {
@@ -85,7 +86,7 @@ namespace PropertyManagement.Services
         // DELETE
         public bool DeleteListing(int id)
         {
-            var listing = db.Listings.Single(li => li.PropertyId == id);
+            var listing = db.Listings.Single(li => li.ListingId == id);
             db.Listings.Remove(listing);
             return db.SaveChanges() == 1;
         }
