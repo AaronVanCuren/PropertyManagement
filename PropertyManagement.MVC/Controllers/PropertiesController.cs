@@ -76,7 +76,7 @@ namespace PropertyManagement.Controllers
 
             var svc = PropertyCreateService();
             var model = svc.GetPropertyById(id);
-            var property = new PropertyEdit
+            var property = new PropertyDetail
             {
                 Address = model.Address,
                 PropTy = model.PropTy,
@@ -104,7 +104,7 @@ namespace PropertyManagement.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, PropertyEdit property)
+        public ActionResult Edit(int id, PropertyDetail property)
         {
             if (!ModelState.IsValid)
             {

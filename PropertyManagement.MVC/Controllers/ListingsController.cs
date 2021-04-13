@@ -64,14 +64,6 @@ namespace PropertyManagement.Controllers
             return View(listing);
         }
 
-        // GET: Listings/Delete/{id}
-        public ActionResult Delete(int id)
-        {
-            var svc = ListingCreateService();
-            var listing = svc.GetListingById(id);
-            return View(listing);
-        }
-
         // POST: Listings/Delete/{id}
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]

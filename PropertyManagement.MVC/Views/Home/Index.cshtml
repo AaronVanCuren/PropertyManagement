@@ -6,6 +6,16 @@
     <h1>#1 Property Management Company in Fort Wayne</h1>
     <p class="lead">Lovely Living Property Management launched in 2020.</p>
     <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+    <ul>
+        <li>@Html.ActionLink("Properties", "Index", "Properties")</li>
+        <li>@Html.ActionLink("Listings", "Index", "Listings")</li>
+        <li>@Html.ActionLink("Comments", "Index", "Comments")</li>
+        <li>@Html.ActionLink("Comment Replies", "Index", "CommentReplies")</li>
+        <li>@Html.ActionLink("Vendors", "Index", "Vendors")</li>
+        <li>@Html.ActionLink("Vendor Reviews", "Index", "VendorReviews")</li>
+        <li>@Html.ActionLink("Company Reviews", "Index", "VendorCompanys")</li>
+        <li>@Html.ActionLink("Review Replies", "Index", "ReviewReplies")</li>
+    </ul>
 </div>
 
 <div class="row">
@@ -29,5 +39,26 @@
             Check out our approved vendors.
         </p>
         <p>@Html.ActionLink(HttpUtility.HtmlDecode("Show Vendors &raquo;"), "Index", "Vendors", null, new { @class = "btn btn-primary btn-large" })</p>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <h4>Review 1</h4>
+        <p>
+            random review
+        </p>
+    </div>
+    <div class="col-md-4">
+        <h4>Review 2</h4>
+        <p>
+            random review
+        </p>
+    </div>
+    <div class="col-md-4">
+        <h4>Review 3</h4>
+        <p>
+            random review
+        </p>
     </div>
 </div>

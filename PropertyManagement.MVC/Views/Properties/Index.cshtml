@@ -4,10 +4,10 @@
     ViewBag.Title = "Properties";
 }
 
-<h2>Properties</h2>
+<h2>Our Properties</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Create New Property", "Create")
 </p>
 
 @if (TempData.ContainsKey("SaveResult"))
@@ -42,26 +42,32 @@
                 @Html.DisplayFor(modelItem => item.Address)
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.PropertyId }) |
-                @*@Html.ActionLink("Details", "Details", new { id = item.PropertyId })*@
+                <div id="showmodaledit" class="modal fade" tabindex="-1" role="dialog">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            @{Html.RenderPartial("Edit", item);}
+                        </div><!-- /.modal-content -->
+                    </div><!-- /.modal-dialog -->
+                </div><!-- /.modal -->
+                <button id='open' data-toggle="modal" data-target="#showmodaledit">Edit</button> |
 
-                <div id="showmodal" class="modal fade" tabindex="-1" role="dialog">
+                <div id="showmodaldetail" class="modal fade" tabindex="-1" role="dialog">
                     <div class="modal-dialog" role="document">
                         <div class="modal-content">
                             @{Html.RenderPartial("Details", item);}
                         </div><!-- /.modal-content -->
                     </div><!-- /.modal-dialog -->
                 </div><!-- /.modal -->
-                <button id='open' data-toggle="modal" data-target="#showmodal">Details</button>|
+                <button id='open' data-toggle="modal" data-target="#showmodaldetail">Details</button> |
 
-                <div id="showmodal" class="modal fade" tabindex="-1" role="dialog">
+                <div id="showmodaldelete" class="modal fade" tabindex="-1" role="dialog">
                     <div class="modal-dialog" role="document">
                         <div class="modal-content">
                             @{Html.RenderPartial("Delete", item);}
                         </div><!-- /.modal-content -->
                     </div><!-- /.modal-dialog -->
                 </div><!-- /.modal -->
-                <button id='open' data-toggle="modal" data-target="#showmodal">Delete</button>
+                <button id='open' data-toggle="modal" data-target="#showmodaldelete">Delete</button>
             </td>
         </tr>
     }

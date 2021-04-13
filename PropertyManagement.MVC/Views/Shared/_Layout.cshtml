@@ -11,40 +11,26 @@
 <body>
     <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-            </div>
-            <div class="navbar-fixed-top">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-
-                    <li>@Html.ActionLink("Properties", "Index", "Properties")</li>
-                    <li>@Html.ActionLink("Listings", "Index", "Listings")</li>
-                    <li>@Html.ActionLink("Comments", "Index", "Comments")</li>
-                    <li>@Html.ActionLink("Comment Replies", "Index", "CommentReplies")</li>
-
-                    <li>@Html.ActionLink("Vendors", "Index", "Vendors")</li>
-
-                    <li>@Html.ActionLink("Vendor Reviews", "Index", "VendorReviews")</li>
-                    <li>@Html.ActionLink("Company Reviews", "Index", "VendorCompanys")</li>
-                    <li>@Html.ActionLink("Review Replies", "Index", "ReviewReplies")</li>
+            <div class="navbar-fixed-top ">
+                <ul class="nav navbar-expand">
+                    <li class="nav-item">@Html.ActionLink("HOME", "Index", "Home")</li> |
+                    <li class="nav-item">@Html.ActionLink("OUR SERVICES", "Services", "Home")</li> |
+                    <li class="nav-item">@Html.ActionLink("LISTINGS", "Index", "Listings")</li> |
+                    @*<li class="nav-item">@Html.ActionLink("OWNERS", "", "")</li> |
+                        <li class="nav-item">@Html.ActionLink("RESIDENTS", "", "")</li> |*@
+                    <li class="nav-item">@Html.ActionLink("ABOUT US", "About", "Home")</li> |
+                    <li class="nav-item">@Html.ActionLink("CONTACT US", "Contact", "Home")</li> |
+                    <li>@Html.Partial("_LoginPartial")</li>
                 </ul>
-                @Html.Partial("_LoginPartial")
             </div>
         </div>
     </div>
+
     <div class="container body-content">
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+            <p>&copy; @DateTime.Now.Year - Lovely Living Property Management, LLC | Powered by Aaron Van Curen's Wits</p>
         </footer>
     </div>
 
