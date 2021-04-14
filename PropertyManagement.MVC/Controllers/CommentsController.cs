@@ -20,7 +20,7 @@ namespace PropertyManagement.Controllers
         // GET: Comments
         public ActionResult Index()
         {
-            var svc = CommentCreateService();
+            var svc = CreateCommentService();
             var comments = svc.GetComments();
             return View(comments);
         }
@@ -41,7 +41,7 @@ namespace PropertyManagement.Controllers
             if (!ModelState.IsValid)
                 return View(comment);
 
-            var svc = CommentCreateService();
+            var svc = CreateCommentService();
 
             if (svc.CommentCreate(comment))
             {
@@ -57,7 +57,7 @@ namespace PropertyManagement.Controllers
         // GET: Comments/Details/{id}
         public ActionResult Details(int id)
         {
-            var svc = CommentCreateService();
+            var svc = CreateCommentService();
             var comment = svc.GetCommentById(id);
             return View(comment);
         }
@@ -65,7 +65,7 @@ namespace PropertyManagement.Controllers
         // GET: Comments/Edit/{id}
         public ActionResult Edit(int id)
         {
-            var svc = CommentCreateService();
+            var svc = CreateCommentService();
             var model = svc.GetCommentById(id);
             var comment = new CommentEdit
             {
@@ -93,7 +93,7 @@ namespace PropertyManagement.Controllers
                 return View(comment);
             }
 
-            var svc = CommentCreateService();
+            var svc = CreateCommentService();
 
             if (svc.UpdateComment(comment))
             {
@@ -108,7 +108,7 @@ namespace PropertyManagement.Controllers
         // GET: Comments/Delete/{id}
         public ActionResult Delete(int id)
         {
-            var svc = CommentCreateService();
+            var svc = CreateCommentService();
             var comment = svc.GetCommentById(id);
             return View(comment);
         }
@@ -118,7 +118,7 @@ namespace PropertyManagement.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            var svc = CommentCreateService();
+            var svc = CreateCommentService();
             svc.DeleteComment(id);
             TempData["SaveResult"] = "Comment was deleted.";
             return RedirectToAction("Index");
@@ -133,7 +133,7 @@ namespace PropertyManagement.Controllers
             base.Dispose(disposing);
         }
 
-        private CommentService CommentCreateService()
+        private CommentService CreateCommentService()
         {
             var userId = User.Identity.GetUserId();
             var svc = new CommentService(userId);

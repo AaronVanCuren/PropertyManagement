@@ -18,7 +18,7 @@ namespace PropertyManagement.Controllers
         // GET: Properties
         public ActionResult Index()
         {
-            var svc = PropertyCreateService();
+            var svc = CreatePropertyService();
             var property = svc.GetProperties();
             return View(property);
         }
@@ -43,7 +43,7 @@ namespace PropertyManagement.Controllers
             if (!ModelState.IsValid)
                 return View(property);
 
-            var svc = PropertyCreateService();
+            var svc = CreatePropertyService();
 
             if (svc.PropertyCreate(property))
             {
@@ -60,7 +60,7 @@ namespace PropertyManagement.Controllers
         [ActionName("Details")]
         public ActionResult Details(int id)
         {
-            var svc = PropertyCreateService();
+            var svc = CreatePropertyService();
             var property = svc.GetPropertyById(id);
             return View(property);
         }
@@ -74,7 +74,7 @@ namespace PropertyManagement.Controllers
             ViewBag.Appliances = Enum.GetValues(typeof(Applicances)).Cast<Applicances>().ToList();
             ViewBag.Amenities = Enum.GetValues(typeof(Amenities)).Cast<Amenities>().ToList();*/
 
-            var svc = PropertyCreateService();
+            var svc = CreatePropertyService();
             var model = svc.GetPropertyById(id);
             var property = new PropertyDetail
             {
@@ -96,6 +96,7 @@ namespace PropertyManagement.Controllers
                 Dog = model.Dog,
                 /*Amenities = model.Amenities*/
             };
+
             return View(property);
         }
 
@@ -117,7 +118,7 @@ namespace PropertyManagement.Controllers
                 return View(property);
             }
 
-            var svc = PropertyCreateService();
+            var svc = CreatePropertyService();
 
             if (svc.UpdateProperty(property))
             {
@@ -133,7 +134,7 @@ namespace PropertyManagement.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteProperty(int id)
         {
-            var svc = PropertyCreateService();
+            var svc = CreatePropertyService();
             svc.DeleteProperty(id);
             TempData["SaveResult"] = "Property was deleted.";
             return RedirectToAction("Index");
@@ -148,7 +149,7 @@ namespace PropertyManagement.Controllers
             base.Dispose(disposing);
         }
 
-        private PropertyService PropertyCreateService()
+        private PropertyService CreatePropertyService()
         {
             var userId = User.Identity.GetUserId();
             var svc = new PropertyService(userId);

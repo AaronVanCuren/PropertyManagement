@@ -20,7 +20,7 @@ namespace PropertyManagement.Controllers
         // GET: Listings
         public ActionResult Index()
         {
-            var svc = ListingCreateService();
+            var svc = CreateListingService();
             var listing = svc.GetListings();
             return View(listing);
         }
@@ -28,7 +28,7 @@ namespace PropertyManagement.Controllers
         // GET: Listings/Create
         public ActionResult Create()
         {
-            var svcP = PropertyCreateService();
+            var svcP = CreatePropertyService();
             ViewBag.Properties = svcP.GetProperties();
             return View();
         }
@@ -43,7 +43,7 @@ namespace PropertyManagement.Controllers
             if (!ModelState.IsValid)
                 return View(listing);
 
-            var svc = ListingCreateService();
+            var svc = CreateListingService();
 
             if (svc.ListingCreate(listing))
             {
@@ -59,7 +59,7 @@ namespace PropertyManagement.Controllers
         // GET: Listings/Details/{id}
         public ActionResult Details(int id)
         {
-            var svc = ListingCreateService();
+            var svc = CreateListingService();
             var listing = svc.GetListingById(id);
             return View(listing);
         }
@@ -69,7 +69,7 @@ namespace PropertyManagement.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            var svc = ListingCreateService();
+            var svc = CreateListingService();
             svc.DeleteListing(id);
             TempData["SaveResult"] = "Listing was deleted.";
             return RedirectToAction("Index");
@@ -84,14 +84,14 @@ namespace PropertyManagement.Controllers
             base.Dispose(disposing);
         }
 
-        private ListingService ListingCreateService()
+        private ListingService CreateListingService()
         {
             var userId = User.Identity.GetUserId();
             var svc = new ListingService(userId);
             return svc;
         }
 
-        private PropertyService PropertyCreateService()
+        private PropertyService CreatePropertyService()
         {
             var userId = User.Identity.GetUserId();
             var svcP = new PropertyService(userId);
