@@ -17,7 +17,7 @@ namespace PropertyManagement.Controllers
         // GET: ReviewReplies
         public ActionResult Index()
         {
-            var svc = ReviewRepliesCreateService();
+            var svc = CreateReviewRepliesService();
             var rReply = svc.GetReviewReplies();
             return View(rReply);
         }
@@ -38,7 +38,7 @@ namespace PropertyManagement.Controllers
             if (!ModelState.IsValid)
                 return View(reply);
 
-            var svc = ReviewRepliesCreateService();
+            var svc = CreateReviewRepliesService();
 
             if (svc.ReplyReviewCreate(reply))
             {
@@ -54,7 +54,7 @@ namespace PropertyManagement.Controllers
         // GET: ReviewReplies/Details/{id}
         public ActionResult Details(int id)
         {
-            var svc = ReviewRepliesCreateService();
+            var svc = CreateReviewRepliesService();
             var reply = svc.GetReviewRepliesById(id);
             return View(reply);
         }
@@ -62,7 +62,7 @@ namespace PropertyManagement.Controllers
         // GET: ReviewReplies/Edit/{id}
         public ActionResult Edit(int id)
         {
-            var svc = ReviewRepliesCreateService();
+            var svc = CreateReviewRepliesService();
             var model = svc.GetReviewRepliesById(id);
             var reply = new ReplyEdit
             {
@@ -90,7 +90,7 @@ namespace PropertyManagement.Controllers
                 return View(reply);
             }
 
-            var svc = ReviewRepliesCreateService();
+            var svc = CreateReviewRepliesService();
 
             if (svc.UpdateReply(reply))
             {
@@ -105,7 +105,7 @@ namespace PropertyManagement.Controllers
         // GET: ReviewReplies/Delete/{id}
         public ActionResult Delete(int id)
         {
-            var svc = ReviewRepliesCreateService();
+            var svc = CreateReviewRepliesService();
             var reply = svc.GetReviewRepliesById(id);
             return View(reply);
         }
@@ -115,7 +115,7 @@ namespace PropertyManagement.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            var svc = ReviewRepliesCreateService();
+            var svc = CreateReviewRepliesService();
             svc.DeleteReply(id);
             TempData["SaveResult"] = "Reply review was deleted.";
             return RedirectToAction("Index");
@@ -130,7 +130,7 @@ namespace PropertyManagement.Controllers
             base.Dispose(disposing);
         }
 
-        private ReplyService ReviewRepliesCreateService()
+        private ReplyService CreateReviewRepliesService()
         {
             var userId = User.Identity.GetUserId();
             var svc = new ReplyService(userId);

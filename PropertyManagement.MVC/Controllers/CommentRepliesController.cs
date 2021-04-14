@@ -17,7 +17,7 @@ namespace PropertyManagement.Controllers
         // GET: CommentReplies
         public ActionResult Index()
         {
-            var svc = CommentRepliesCreateService();
+            var svc = CreateCommentRepliesService();
             var cReply = svc.GetCommentReplies();
             return View(cReply);
         }
@@ -38,7 +38,7 @@ namespace PropertyManagement.Controllers
             if (!ModelState.IsValid)
                 return View(reply);
 
-            var svc = CommentRepliesCreateService();
+            var svc = CreateCommentRepliesService();
 
             if (svc.ReplyCommentCreate(reply))
             {
@@ -54,7 +54,7 @@ namespace PropertyManagement.Controllers
         // GET: CommentReplies/Details/{id}
         public ActionResult Details(int? id)
         {
-            var svc = CommentRepliesCreateService();
+            var svc = CreateCommentRepliesService();
             var reply = svc.GetCommentRepliesById(id);
             return View(reply);
         }
@@ -62,7 +62,7 @@ namespace PropertyManagement.Controllers
         // GET: CommentReplies/Edit/{id}
         public ActionResult Edit(int id)
         {
-            var svc = CommentRepliesCreateService();
+            var svc = CreateCommentRepliesService();
             var model = svc.GetCommentRepliesById(id);
             var reply = new ReplyEdit
             {
@@ -90,7 +90,7 @@ namespace PropertyManagement.Controllers
                 return View(reply);
             }
 
-            var svc = CommentRepliesCreateService();
+            var svc = CreateCommentRepliesService();
 
             if (svc.UpdateReply(reply))
             {
@@ -105,7 +105,7 @@ namespace PropertyManagement.Controllers
         // GET: CommentReplies/Delete/{id}
         public ActionResult Delete(int id)
         {
-            var svc = CommentRepliesCreateService();
+            var svc = CreateCommentRepliesService();
             var reply = svc.GetCommentRepliesById(id);
             return View(reply);
         }
@@ -115,7 +115,7 @@ namespace PropertyManagement.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            var svc = CommentRepliesCreateService();
+            var svc = CreateCommentRepliesService();
             svc.DeleteReply(id);
             TempData["SaveResult"] = "Reply review was deleted.";
             return RedirectToAction("Index");
@@ -130,7 +130,7 @@ namespace PropertyManagement.Controllers
             base.Dispose(disposing);
         }
 
-        private ReplyService CommentRepliesCreateService()
+        private ReplyService CreateCommentRepliesService()
         {
             var userId = User.Identity.GetUserId();
             var svc = new ReplyService(userId);

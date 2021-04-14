@@ -17,7 +17,7 @@ namespace PropertyManagement.Controllers
         // GET: VendorReviews
         public ActionResult Index()
         {
-            var svc = VendorReviewCreateService();
+            var svc = CreateVendorReviewService();
             var vReview = svc.GetVendorReviews();
             return View(vReview);
         }
@@ -38,7 +38,7 @@ namespace PropertyManagement.Controllers
             if (!ModelState.IsValid)
                 return View(review);
 
-            var svc = VendorReviewCreateService();
+            var svc = CreateVendorReviewService();
 
             if (svc.ReviewVendorCreate(review))
             {
@@ -54,7 +54,7 @@ namespace PropertyManagement.Controllers
         // GET: VendorReviews/Details/{id}
         public ActionResult Details(int id)
         {
-            var svc = VendorReviewCreateService();
+            var svc = CreateVendorReviewService();
             var review = svc.GetVendorReviewsById(id);
             return View(review);
         }
@@ -62,7 +62,7 @@ namespace PropertyManagement.Controllers
         // GET: VendorReviews/Edit/{id}
         public ActionResult Edit(int id)
         {
-            var svc = VendorReviewCreateService();
+            var svc = CreateVendorReviewService();
             var model = svc.GetVendorReviewsById(id);
             var review = new ReviewEdit
             {
@@ -91,7 +91,7 @@ namespace PropertyManagement.Controllers
                 return View(review);
             }
 
-            var svc = VendorReviewCreateService();
+            var svc = CreateVendorReviewService();
 
             if (svc.UpdateReview(review))
             {
@@ -106,7 +106,7 @@ namespace PropertyManagement.Controllers
         // GET: VendorReviews/Delete/{id}
         public ActionResult Delete(int id)
         {
-            var svc = VendorReviewCreateService();
+            var svc = CreateVendorReviewService();
             var review = svc.GetVendorReviewsById(id);
             return View(review);
         }
@@ -116,7 +116,7 @@ namespace PropertyManagement.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            var svc = VendorReviewCreateService();
+            var svc = CreateVendorReviewService();
             svc.DeleteReview(id);
             TempData["SaveResult"] = "Vendor review was deleted.";
             return RedirectToAction("Index");
@@ -131,7 +131,7 @@ namespace PropertyManagement.Controllers
             base.Dispose(disposing);
         }
 
-        private ReviewService VendorReviewCreateService()
+        private ReviewService CreateVendorReviewService()
         {
             var userId = User.Identity.GetUserId();
             var svc = new ReviewService(userId);

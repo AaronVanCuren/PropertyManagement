@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PropertyManagement.Data;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,7 +9,9 @@ namespace PropertyManagement.Models.ApplicationUsers
 {
     public class ApplicationUserList
     {
-        public int Id { get; set; }
+        public string Id { get; set; }
+
+        public UserType UserType { get; set; }
 
         public string FirstName { get; set; }
 

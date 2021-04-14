@@ -20,7 +20,7 @@ namespace PropertyManagement.Controllers
         // GET: Vendors
         public ActionResult Index()
         {
-            var svc = VendorCreateService();
+            var svc = CreateVendorService();
             var vendors = svc.GetVendors();
             return View(vendors);
         }
@@ -42,7 +42,7 @@ namespace PropertyManagement.Controllers
             if (!ModelState.IsValid)
                 return View(vendor);
 
-            var svc = VendorCreateService();
+            var svc = CreateVendorService();
 
             if (svc.VendorCreate(vendor))
             {
@@ -58,7 +58,7 @@ namespace PropertyManagement.Controllers
         // GET: Vendors/Details/{id}
         public ActionResult Details(int id)
         {
-            var svc = VendorCreateService();
+            var svc = CreateVendorService();
             var vendor = svc.GetVendorById(id);
             return View(vendor);
         }
@@ -66,7 +66,7 @@ namespace PropertyManagement.Controllers
         // GET: Vendors/Edit/{id}
         public ActionResult Edit(int id)
         {
-            var svc = VendorCreateService();
+            var svc = CreateVendorService();
             var model = svc.GetVendorById(id);
             var vendor = new VendorEdit
             {
@@ -97,7 +97,7 @@ namespace PropertyManagement.Controllers
                 return View(vendor);
             }
 
-            var svc = VendorCreateService();
+            var svc = CreateVendorService();
 
             if (svc.UpdateVendor(vendor))
             {
@@ -112,7 +112,7 @@ namespace PropertyManagement.Controllers
         // GET: Vendors/Delete/{id}
         public ActionResult Delete(int id)
         {
-            var svc = VendorCreateService();
+            var svc = CreateVendorService();
             var vendor = svc.GetVendorById(id);
             return View(vendor);
         }
@@ -122,7 +122,7 @@ namespace PropertyManagement.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            var svc = VendorCreateService();
+            var svc = CreateVendorService();
             svc.DeleteVendor(id);
             TempData["SaveResult"] = "Vendor was deleted.";
             return RedirectToAction("Index");
@@ -137,7 +137,7 @@ namespace PropertyManagement.Controllers
             base.Dispose(disposing);
         }
 
-        private VendorService VendorCreateService()
+        private VendorService CreateVendorService()
         {
             var userId = User.Identity.GetUserId();
             var svc = new VendorService(userId);
