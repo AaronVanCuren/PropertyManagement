@@ -9,6 +9,7 @@ namespace PropertyManagement.Models.Vendors
 {
     public class VendorList
     {
+        public int VendorId { get; set; }
         public string VendorName { get; set; }
 
         public string Description { get; set; }

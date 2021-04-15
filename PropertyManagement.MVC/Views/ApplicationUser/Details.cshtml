@@ -1,0 +1,76 @@
+﻿@model PropertyManagement.Models.ApplicationUsers.ApplicationUserDetail
+
+@{ 
+    ViewBag.Title = "User Details";
+}
+
+<div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    <h4 class="modal-title">User Details</h4>
+</div>
+
+<div class="modal-body">
+    <p><span class="ui-icon ui-icon-alert" style="float:left; margin:12px 12px 20px 0;"></span>Would you like to edit this user?</p>
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.FirstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FirstName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LastName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LastName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UserName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UserName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PhoneNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PhoneNumber)
+        </dd>
+
+    </dl>
+</div>
+
+<div class="modal-footer">
+
+    @using (Html.BeginRouteForm("Default", new
+    {
+        controller = "ApplicationUser",
+        action = "Edit",
+        id = Model.Id
+    }, FormMethod.Get))
+
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Edit" class="btn btn-default" /> |
+        </div>
+    }
+
+    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+</div>
