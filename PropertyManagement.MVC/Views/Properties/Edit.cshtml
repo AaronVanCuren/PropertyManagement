@@ -15,10 +15,12 @@
         @Html.AntiForgeryToken()
 
         <p><span class="ui-icon ui-icon-alert" style="float:left; margin:12px 12px 20px 0;"></span>Would you like to edit this property?</p>
+
         <div class="form-horizontal">
             <h4>Edit Property</h4>
             <hr />
             @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
             <div class="form-group">
                 @Html.LabelFor(model => model.PropertyId, htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-md-10">
@@ -144,18 +146,16 @@
 </div>
 
 <div class="modal-footer">
-    @*<button type="button" class="btn btn-primary">Confirm Delete</button>*@
 
     @using (Html.BeginRouteForm("Default", new
     {
         controller = "Properties",
         action = "Edit",
-        id = Model.PropertyId
+        id = "@Model.PropertyId"
     }, FormMethod.Post))
 
     {
         @Html.AntiForgeryToken()
-
         <div class="form-actions no-color">
             <input type="submit" value="Save" class="btn btn-default" /> |
         </div>

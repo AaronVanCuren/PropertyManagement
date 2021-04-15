@@ -20,10 +20,10 @@ namespace PropertyManagement.Services
         }
 
         // READ
-        public IEnumerable<ApplicationUserList> GetManagers()
+        public IEnumerable<ApplicationUserDetail> GetManagers()
         {
             var query = db.Users.Where(um => um.UserType == UserType.manager)
-                .Select(um => new ApplicationUserList
+                .Select(um => new ApplicationUserDetail
                 {
                     FirstName = um.FirstName,
                     LastName = um.LastName,
@@ -35,10 +35,10 @@ namespace PropertyManagement.Services
             return query.ToArray();
         }
 
-        public IEnumerable<ApplicationUserList> GetOwners()
+        public IEnumerable<ApplicationUserDetail> GetOwners()
         {
             var query = db.Users.Where(uo => uo.UserType == UserType.owner)
-                .Select(uo => new ApplicationUserList
+                .Select(uo => new ApplicationUserDetail
                 {
 
                     FirstName = uo.FirstName,
@@ -51,10 +51,10 @@ namespace PropertyManagement.Services
             return query.ToArray();
         }
 
-        public IEnumerable<ApplicationUserList> GetResidents()
+        public IEnumerable<ApplicationUserDetail> GetResidents()
         {
             var query = db.Users.Where(ur => ur.UserType == UserType.resident)
-                .Select(ur => new ApplicationUserList
+                .Select(ur => new ApplicationUserDetail
                 {
                     FirstName = ur.FirstName,
                     LastName = ur.LastName,
@@ -67,10 +67,10 @@ namespace PropertyManagement.Services
         }
 
         // READ BY ID
-        public ApplicationUserList GetUserById(string id)
+        public ApplicationUserDetail GetUserById(string id)
         {
             var user = db.Users.Single(u => u.Id == id);
-            return new ApplicationUserList
+            return new ApplicationUserDetail
             {
                 Id = user.Id,
                 FirstName = user.FirstName,
@@ -82,7 +82,7 @@ namespace PropertyManagement.Services
         }
 
         // UPDATE
-        public bool UpdateUser(ApplicationUserEdit model)
+        public bool UpdateUser(ApplicationUserDetail model)
         {
             var user = db.Users.Single(u => u.Id == model.Id);
             {

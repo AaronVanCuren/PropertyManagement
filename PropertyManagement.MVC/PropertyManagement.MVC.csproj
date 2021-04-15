@@ -437,10 +437,16 @@
     <Content Include="Views\Properties\Edit.cshtml" />
     <Content Include="Views\Listings\Delete.cshtml" />
     <Content Include="Views\Listings\Details.cshtml" />
+    <Content Include="Views\ApplicationUser\Index.cshtml" />
+    <Content Include="Views\ApplicationUser\GetManagers.cshtml" />
+    <Content Include="Views\ApplicationUser\GetOwners.cshtml" />
+    <Content Include="Views\ApplicationUser\GetResidents.cshtml" />
+    <Content Include="Views\ApplicationUser\Details.cshtml" />
+    <Content Include="Views\ApplicationUser\Edit.cshtml" />
+    <Content Include="Views\ApplicationUser\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\ApplicationUser\" />
     <Folder Include="Views\Default\" />
   </ItemGroup>
   <ItemGroup>

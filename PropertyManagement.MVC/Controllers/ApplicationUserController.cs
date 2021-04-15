@@ -14,19 +14,11 @@ namespace PropertyManagement.Controllers
     {
         private readonly ApplicationDbContext db = new ApplicationDbContext();
 
-        private readonly string _id;
-
-        public ApplicationUserController(string userId)
-        {
-            _id = userId;
-        }
-
         // GET: ApplicationUser
         public ActionResult Index()
         {
             return View();
         }
-
 
         // GET: ApplicationUser/Managers
         public ActionResult GetManagers()
@@ -84,7 +76,7 @@ namespace PropertyManagement.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(string id, ApplicationUserEdit user)
+        public ActionResult Edit(string id, ApplicationUserDetail user)
         {
             if (!ModelState.IsValid)
             {

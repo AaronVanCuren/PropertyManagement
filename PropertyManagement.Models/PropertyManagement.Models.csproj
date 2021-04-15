@@ -73,8 +73,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApplicationUser\ApplicationUserDetail.cs" />
-    <Compile Include="ApplicationUser\ApplicationUserEdit.cs" />
-    <Compile Include="ApplicationUser\ApplicationUserList.cs" />
     <Compile Include="Comment\CommentCreate.cs" />
     <Compile Include="Comment\CommentDetail.cs" />
     <Compile Include="Comment\CommentEdit.cs" />

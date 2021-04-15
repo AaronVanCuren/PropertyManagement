@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using PropertyManagement.Data;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace PropertyManagement.Models
@@ -64,6 +65,10 @@ namespace PropertyManagement.Models
 
     public class RegisterViewModel
     {
+        [Required]
+        [Display(Name = "User Type")]
+        public UserType UserType { get; set; }
+
         [Required]
         [EmailAddress]
         [Display(Name = "Email")]
